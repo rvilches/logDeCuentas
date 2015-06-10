@@ -1,0 +1,34 @@
+@charset "UFT-8";
+article, aside, footer, header, main, nav, section
+{
+	display: block;
+}
+
+html, body, h1, h2, h3 , ul,li, a, p
+article, aside, footer, header, main, nav, section
+{
+	padding:0;
+	margin: 0;
+}
+
+#bodyh2
+{
+
+	background-color: #0D3D6E;
+	color:white;
+	padding: 5px;
+	margin-bottom:5px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+body
+
+{
+	width:960px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+

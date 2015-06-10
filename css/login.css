@@ -1,0 +1,107 @@
+@charset "UFT-8";
+article, aside, footer, header, main, nav, section
+{
+	display: block;
+}
+
+html, body, h1, h2, h3 , ul,li, a, p
+article, aside, footer, header, main, nav, section
+{
+	padding:0;
+	margin: 0;
+}
+
+
+body
+{
+	width:960px;
+	margin-left: auto;
+	margin-right: auto;
+
+
+
+}
+body h1
+{
+	background-color: #0D3D6E;
+	color:white;
+	padding: 5px;
+	margin-bottom:5px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+#signup a
+{
+	margin-top: 10px;
+	float:right;
+	color: white;
+	font-size: 15px;
+	
+	
+	
+}
+
+section
+{
+	
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	height: 250px;
+	padding-top: 70px;
+	background-image: url("relax.jpg");
+
+	background-repeat:no-repeat;
+	background-size: contain;
+	
+	
+	
+}
+
+section h3
+{
+	color:white;
+	background-color: black;
+	width :175px;
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1px;
+	border-top-left-radius: 15px;
+	border-top-right-radius:15px 
+}
+
+section article
+{
+	background-color:  grey;
+	opacity: 0.9;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	width :175px;
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	
+	
+
+}
+.formusername
+{
+	position: relative;
+	color:white;
+	
+}
+.formpassword
+{
+	position: relative;
+	color:white;
+	top:5px;
+
+}
+#passwordinput
+{
+	position: relative;
+	top:5px;
+}
+

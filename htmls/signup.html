@@ -1,0 +1,31 @@
+<!DOCTYPE html>	
+<html lang="en">
+<head>
+	<title>Subscribe</title>
+	<link rel="stylesheet" type="text/css" href="../css/signup.css">
+</head>
+<body onload="disabledSubmit()">
+	<h2 id="bodyh2">Sign Up</h2>
+	<section>
+		<form id = "userForm" >
+		
+		First Name:
+		<br><input type="text" name="firstname" placeholder="firstname" autofocus ="autofocus" required><br><hr>
+		Lastname:
+		<br><input type="text" name="lastname" placeholder="lastname" required><br><hr>
+		Second Lastname:
+		<br><input type="text" name="secondLastname" placeholder="secondlastname" ><br><hr>
+		Username:
+		<br><input type="text" name="username" placeholder="username" required><br><hr>
+		Password:
+		<br><input type="password" name="password" placeholder="password" required><br><hr>
+		email:
+		<br><input type="text" name="email" placeholder="email" required><br><hr>
+		<input id="submit" type="submit" name="submit" value="create account" onclick ="getUser()" >
+
+
+		</form>
+	</section>
+<script type="text/javascript" src = "signup.js"></script>
+</body>
+</html>
