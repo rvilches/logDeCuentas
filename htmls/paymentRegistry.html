@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Registrar Pagos</title>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/paymentRegistry.css">
+    
+</head>
+<body onload="getDate()">
+	<h1><img src="../Images/carla.jpg" name="profilePic" alt="Profile Picture" style="width:128px;height:128px;">Carmen
+	</h1>
+	
+	<h3 id="header">Registrar Pagos</h3>
+
+	<section id="monthDetail">
+		
+		<br />
+
+		<article>
+			<br />
+
+            <label id="ingresoLbl">Ingreso: <input type="number" id="totalSueldoInput" style="width:100px" /></label>
+            
+            <label id="balanceLbl"> Balance: <label id="balanceLbl">$200.00</label></label>
+                <br /><br />
+
+                <table id="pagosTable" class="weekTable">
+                    <tr>
+                        <th id="cuenta">Cuenta</th>
+                        <th id="pago">Fecha</th>
+                        <th id="pago">Pago</th>
+                    </tr>
+                    <tr>
+                        <td> <select id="cuentasDp"> <option value="0">AEE</option> </select> </td>
+                        <td> <input style="width:75px;" type="date" id="fechaPago" max="2015-01-01" placeholder="MM-DD-YYY" > 
+                        <!--<br /> <label id="formatLbls">MM-DD-YYYY</label> --> </td>
+                        <td> <input id="cantPago" style=" width:100px" /></td>
+                    </tr>
+
+                </table>
+
+            <input type="button" name="button" onclick="addNewPayment()" class="button" style="width:30px; height:30px" />
+          
+
+
+            <br /><br />
+            <div id="totalInfoDiv">
+                Total de Gastos: <label id="totalSueldoLbl">$200.00</label>
+
+            </div>
+      <br />
+
+    </article>
+		
+
+
+	</section>
+
+
+<script type="text/javascript" src="paymentRegistry.js"></script>
+</body>
+</html>
