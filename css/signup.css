@@ -30,5 +30,20 @@ body
 	margin-right: auto;
 
 }
+#incEmail
+{
+	color:transparent;
+	margin-left:15px;
+
+}
+#userForm
+{
+	margin-left: 15px;
+}
+#submit
+{
+	background-color: #0D3D6E;
+	color:white;
+}
 
 

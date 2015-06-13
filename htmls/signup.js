@@ -26,18 +26,37 @@ function getUser()
 	childCount +=5;
 	newUser.email = tempUser.childNodes[childCount].value;
 	childCount +=5;
-	if(validateUser(newUser.email)==true)
+	if(newUser.firstName.length>0 && newUser.firstLastname.length>0
+	&& newUser.secondLastname.length>0 && newUser.username.length>0
+	&& newUser.password.length>0 && (validateEmail(newUser.email))== true)
 	{
-		document.getElementById("submit").disabled="";
+		document.getElementById('submit').disabled = "";
 	}
-	debbuger;
+	else
+	{
+		document.getElementById('submit').disabled = "disabled"
+	}
+	
 }
-function disabledSubmit()
+
+function validateEmail (email)
 {
-	document.getElementById('submit').disabled = "disabled";
-}
-function validateUser (email)
-{
-	var validEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-    return validEmail.test(email);
+	if(email.length>0)
+	{
+		var validEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    	if(validEmail.test(email) == false)
+    	{
+    		document.getElementById('incEmail').style.color="red";
+    		return false;
+    	}
+    	else
+    	{
+    		document.getElementById('incEmail').style.color="transparent";
+    		return true;
+    	}
+	}
+	else
+	{
+		return true;
+	}
 }
