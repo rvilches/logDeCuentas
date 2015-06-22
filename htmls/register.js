@@ -29,6 +29,8 @@ function addAccount()
 		document.getElementById('otraCuenta').appendChild(submit);
 		inputFlag=1;
 	}
+	else
+	{return 0;}
 	
 }
 
