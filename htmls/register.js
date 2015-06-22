@@ -1,5 +1,6 @@
 var accountsArray =["AAA","AEE","ATT","CABLE","EDUCACION","Gastos Generales"];
 var inputFlag =0;
+var accountDoesExist=0;
 
 function populateAccountsDp () {
 	var accountsDp= document.getElementById('accountsDp');
@@ -34,7 +35,7 @@ function addAccount()
 
 function addToArray()
 {
-	var exist=0;
+	
 	var theNewAccount = String(document.getElementById('theNewAccount').value);
 	if(theNewAccount.length<=0)
 	{
@@ -45,10 +46,10 @@ function addToArray()
 	{
 		if(accountsArray[i]===theNewAccount)
 		{
-			exist = 1;
+			accountDoesExist = 1;
 		}
 	}
-	if(exist==0)
+	if(accountDoesExist==0)
 		{
 		accountsArray.push(theNewAccount);
 		refreshAccountList(String(accountsArray[accountsArray.length-1]));
