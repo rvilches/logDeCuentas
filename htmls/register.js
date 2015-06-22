@@ -30,7 +30,7 @@ function addAccount()
 		inputFlag=1;
 	}
 	else
-	{return 0;}
+
 	
 }
 
