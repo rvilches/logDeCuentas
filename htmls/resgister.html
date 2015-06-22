@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Register</title>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+</head>
+<body onload="populateAccountsDp()">
+
+  <h2>Tus Cuentas:</h2>
+  <p> La pagina de registro es el lugar donde registraras todas las cuentas que mensualmente pagas. Esta registración por lo regular se hace solo la primera vez que vayas a usar nuestro servicio o cuando aparece una cuenta nueva que pagar. Al registrar tus cuentas podras pasar a la página de pagos donde podras realizar los mismos escogiendo las cuentas que desees pagar de las ya registradas.</p>
+  <p>De necesitar añadir cuentas puedes volver a acceder esta página y añadirla sin necesidad de añadir todas nuevamente. Solamente pulsa el botón de "otra" y añade la cuenta si es que esta no existe en el listado previsto.</p>
+  <article>
+      <ul id="accountsDp" multiple>
+      </ul>
+      <button id="otroButton" onClick="addAccount()">Otro</button>
+      <p id="otraCuenta"></p>
+  </article>
+
+
+
+<script type="text/javascript" src="register.js"></script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+ var ingreso = document.getElementById('totalSueldoInput').value;
 
 
 var count = 0;
@@ -25,4 +26,13 @@ function addNewPayment() {
     fechaCell.innerHTML = "<input style=\"width:75px;\" type=\"date\" id=\"fechaPago" + count + "\" max=\"2015-01-01\" placeholder=\"MM-DD-YYYY\" > ";
     pagoCell.innerHTML = "<input id=\"cantPago" + count + "\" style=\" width:100px\" />"
 
+}
+
+function updateBalanceLbl()
+{
+    var ingreso = document.getElementById('totalSueldoInput').value;
+    var cantPago= document.getElementById('cantPago').value;
+    var balance = (ingreso-cantPago);
+    document.getElementById('totalGastosLbl').innerHTML="$"+cantPago+".00";
+    document.getElementById('balanceLbl').innerHTML="Balance: $"+balance+".00";
 }
