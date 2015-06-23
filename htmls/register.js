@@ -8,11 +8,11 @@ function populateAccountsDp () {
 	
 	for(var i =0; i<accountsArray.length; i++)
 	{
-
 		refreshAccountList(String(accountsArray[i]));
 	}
 }
-
+/* funcion para crear el input de añadir una nueva cuenta  y el boton de submit. El inputFlag
+ es para que no se añadan mas cuadrados de input si ya existe uno.*/
 function addAccount()
 {
 
@@ -37,6 +37,7 @@ function addAccount()
 	
 }
 
+// añade nuevas cuentas al arreglo d ecuentas
 function addToArray()
 {
 	
@@ -63,20 +64,22 @@ function addToArray()
 	}
 }
 
+//Añade las cuentas a la lista
 function refreshAccountList(aNewAccount)
 {
-		var accountName = aNewAccount.toUpperCase();
+		var accountName = String(aNewAccount.toUpperCase());
 		var listElement = document.createElement("li");
 		var option = document.createElement("input");
 		option.type = "radio";
+		option.setAttribute("id",accountName);
 		option.name = accountName;
 		option.value = accountName;
 		listElement.appendChild(option);
 		listElement.appendChild(document.createTextNode(accountName));
 		accountsDp.appendChild(listElement);
-		
 }
 
+// verifica si la cuenta de pago que el usuario está tratando de ingresar ya existe.
 function accountDoesExist (aNewAccount)
 {
 	var accountDoesExistBool = 0;
@@ -91,3 +94,21 @@ function accountDoesExist (aNewAccount)
 	return accountDoesExistBool;
   
 }
+
+// Devuelve un arreglo que contiene el nombre de las cuentas que el usuario seleccionó para registrar.
+function getUserAccounts()
+{
+	var selectedUserAccounts=[]
+	var accountList = document.getElementById('accountsDp').getElementsByTagName("input");
+	for(var i =0;i<accountList.length;i++)
+	{
+		if(accountList[i].checked===true)
+		{
+			selectedUserAccounts.push(String(accountList[i].value).toUpperCase());
+		}
+
+	}
+	alert("cuentas sometidas exitosamente");
+}
+
+
