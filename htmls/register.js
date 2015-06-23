@@ -1,12 +1,14 @@
-var accountsArray =["AAA","AEE","ATT","CABLE","EDUCACION","Gastos Generales"];
+var accountsArray =["AAA","AEE","ATT","CABLE","EDUCACION","Gastos generales"];
 var inputFlag =0;
-var accountDoesExist=0;
+
+
 
 function populateAccountsDp () {
 	var accountsDp= document.getElementById('accountsDp');
 	
 	for(var i =0; i<accountsArray.length; i++)
 	{
+
 		refreshAccountList(String(accountsArray[i]));
 	}
 }
@@ -30,7 +32,7 @@ function addAccount()
 		document.getElementById('otraCuenta').appendChild(submit);
 		inputFlag=1;
 	}
-	else
+	
 
 	
 }
@@ -39,29 +41,26 @@ function addToArray()
 {
 	
 	var theNewAccount = String(document.getElementById('theNewAccount').value);
+	
 	if(theNewAccount.length<=0)
 	{
 		alert("La cuenta debe tener un nombre");
 		return 0;
 	}
-	for(var i=0; i<=accountsArray.length-1;i++)
+	
+	if(accountDoesExist(theNewAccount)==0)
 	{
-		if(accountsArray[i]===theNewAccount)
-		{
-			accountDoesExist = 1;
-		}
-	}
-	if(accountDoesExist==0)
-		{
-		accountsArray.push(theNewAccount);
+		console.log("Antes tiene"+accountsArray.length);
+		accountsArray.push(String(theNewAccount));
+		console.log("despues tiene"+accountsArray.length);
 		refreshAccountList(String(accountsArray[accountsArray.length-1]));
 		document.getElementById('theNewAccount').value='';
 
-		}
+	}
 	else
-		{
-			alert("La cuenta "+ theNewAccount.toUpperCase() +" ya existe");
-		}
+	{
+		alert("La cuenta "+ theNewAccount.toUpperCase() +" ya existe");
+	}
 }
 
 function refreshAccountList(aNewAccount)
@@ -76,5 +75,19 @@ function refreshAccountList(aNewAccount)
 		listElement.appendChild(document.createTextNode(accountName));
 		accountsDp.appendChild(listElement);
 		
+}
 
+function accountDoesExist (aNewAccount)
+{
+	var accountDoesExistBool = 0;
+	var theNewAccount=String(aNewAccount).toUpperCase();
+	for(var i =0; i<accountsArray.length;i++)
+	{	
+		if(accountsArray[i].toUpperCase()===theNewAccount)
+		{
+			return accountDoesExistBool=1;
+		}
+	}	
+	return accountDoesExistBool;
+  
 }
