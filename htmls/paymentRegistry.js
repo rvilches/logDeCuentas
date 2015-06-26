@@ -1,6 +1,7 @@
 var ingreso = document.getElementById('totalSueldoInput').value;
-var totalDePagos = Number(0);
+var totalDePagos=0;
 var count=0;
+
 
 var AEE= new cuenta("Carro",1);
 var AAA= new cuenta("AAA",2);
@@ -25,8 +26,8 @@ function pagoDeCuenta(id,nombreDeCuenta, idDeCuenta,fechaDePago,cantidad)
     this.quantity=cantidad;
 
 }
+var arregloDePagos=[];
 
-var cuentasArreglo=["AEE","AAA","BESt BUY","TRANSPORTE","SALUD"];
 var count = 0;
 function getDate()
 {
@@ -38,7 +39,9 @@ function getDate()
 
     var curr_year = d.getFullYear();
 
-    //document.getElementById('fechaPago').value = curr_month + "-" + curr_date + "-" + curr_year;
+    var curr_fecha= curr_month + "/" + curr_date + "/"+curr_year;
+   
+    return curr_fecha;
 }
 
 function addNewPayment() 
@@ -49,20 +52,36 @@ function addNewPayment()
     var cuentaCell = row.insertCell(0);
     var fechaCell = row.insertCell(1);
     var pagoCell = row.insertCell(2);
-    var selectAccount = document.createElement("select");
-    selectAccount.id="cuentaCell"+count;
+    var selectCuenta = document.createElement("select");
+    var selectFecha = document.createElement("input");
+    var selectCantPago = document.createElement("input");
+    
+    selectCuenta.id="cuentaCell"+count;
 
+    selectFecha.type= "date";
+    selectFecha.style.width= 115;
+    selectFecha.id="fechaPago"+count;
+    selectFecha.value = getDate();
+    
+    
+    selectCantPago.type ="number";
+    selectCantPago.id ="cantPago"+count;
+    selectCantPago.placeholder="$ 0.00";
+   
     //for para insertar las diferentes opciones
     if(count > 0)
     {
-        var previousCell = document.getElementById('cuentaCell'+(count-1));
-        for(var i =0; i<previousCell.childNodes.length;i++)
+        var previousAccountCell = document.getElementById('cuentaCell'+(count-1));
+        var previousFechaCell = document.getElementById('fechaPago'+(count-1));
+        var previousPagoCell = document.getElementById('cantPago'+(count-1));
+
+        for(var i =0; i<previousAccountCell.childNodes.length;i++)
         {
-            if(previousCell.childNodes[i].selected==true)
+            if(previousAccountCell.childNodes[i].selected==true)
             {
                for(var j=0;j<arregleDeCuentas.length;j++)
                {
-                if(arregleDeCuentas[j].name==previousCell.childNodes[i].value)
+                if(arregleDeCuentas[j].name==previousAccountCell.childNodes[i].value)
                     {
                         arregleDeCuentas.splice(j,1);
 
@@ -70,7 +89,16 @@ function addNewPayment()
                }
             }
         }
-        previousCell.disabled = "disabled";
+
+        // AQUI ES DONDE UNICO PUEDES SACAR LA INFO COMPLETA
+        previousAccountCell.disabled = "disabled";
+        previousFechaCell.disabled = "disabled";
+        previousPagoCell.disabled = "disabled";
+        totalDePagos=Number(previousPagoCell.value)+totalDePagos;
+        var pago = new pagoDeCuenta(previousAccountCell.id,previousAccountCell.value,previousAccountCell.id,previousFechaCell.value,previousPagoCell.value);
+        updateBalanceLbl();
+        arregloDePagos.push(pago);
+
     }
     for(var i = 0; i< arregleDeCuentas.length;i++)
     {
@@ -78,29 +106,48 @@ function addNewPayment()
         option.setAttribute.id=arregleDeCuentas[i].id;
         option.value=  arregleDeCuentas[i].name;
         option.innerHTML=arregleDeCuentas[i].name;
-        selectAccount.appendChild(option); 
+        selectCuenta.appendChild(option); 
     }
        
-    cuentaCell.appendChild(selectAccount);
+    cuentaCell.appendChild(selectCuenta);
+    fechaCell.appendChild(selectFecha);
+    var dollarSign=document.createTextNode("$ ");
+    pagoCell.appendChild(dollarSign);
+    pagoCell.appendChild(selectCantPago);
+
     
    
     // cuentaCell.innerHTML = "<select id=\"cuentasDp"+count+"\"> <option value=\"0\">AEE</option> </select>";
-    fechaCell.innerHTML = "<input style=\"width:75px;\" type=\"date\" id=\"fechaPago" + count + "\" max=\"2015-01-01\" placeholder=\"MM-DD-YYYY\" > ";
-    pagoCell.innerHTML = "<input id=cantPago2 type=number style=\" width:100px\" onChange=\"updateBalanceLbl(this)\"/>";
+    //fechaCell.innerHTML = "<input style=\"width:115px;\" type=\"date\" id=\"fechaPago"+count+"\" value=curr_fecha placeholder=\"MM-DD-YYYY\" > ";
+    //pagoCell.innerHTML = "<input id=cantPago2 type=number style=\" width:100px\" onChange=\"updateBalanceLbl(this)\"/>";
     count++;
-    console.log("lalala"+typeof(pagoCell.innerHTML.id));
+   
+    if(count >=3)
+    {
 
-
+        for(var i=0;i<arregloDePagos.length;i++)
+        {
+            console.log(arregloDePagos[i]);
+        }
+    }
     // totalDePagos += document.getElementById("cantPago"+count).value;
 }
 
-function updateBalanceLbl(cuenta)
+function updateBalanceLbl()
+{
+   var ingreso = Number(document.getElementById('totalSueldoInput').value);
+  
+    var balance = ingreso;
+    document.getElementById('totalGastosLbl').innerHTML="$"+totalDePagos;
+    document.getElementById('balanceLbl').innerHTML="Balance: $"+(balance - totalDePagos)+".00";
+}
+
+function updateIngreso()
 {
     var ingreso = document.getElementById('totalSueldoInput').value;
-    totalDePagos= Number(totalDePagos) + Number(cuenta.value);
-    var balance = (ingreso-totalDePagos);
-    document.getElementById('totalGastosLbl').innerHTML="$"+totalDePagos+".00";
-    document.getElementById('balanceLbl').innerHTML="Balance: $"+balance+".00";
+   var balance=ingreso;
+   document.getElementById('balanceLbl').innerHTML="Balance: $"+balance+".00";
+   console.log("CaMBIEEE");
 }
 
 // function updateGastos(pago)
