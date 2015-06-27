@@ -137,7 +137,17 @@ font-style:italic;
 
 }
 
-.button
+#doneButton
+{
+
+margin-top: 10px;
+float:right;
+cursor:pointer;
+border:1px;
+border-radius: 1px;
+visibility: hidden;
+}
+#addButton
 {
 background: url(../Images/Add-New.png) no-repeat;
 background-size:30px;
@@ -148,6 +158,8 @@ cursor:pointer;
 border: none;
 
 }
+
+
 
 
 

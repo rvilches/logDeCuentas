@@ -1,4 +1,3 @@
-var ingreso = document.getElementById('totalSueldoInput').value;
 var totalDePagos=0;
 var count=0;
 
@@ -17,13 +16,14 @@ function cuenta (nombre, id)
     this.id=id;
 }
 
-function pagoDeCuenta(id,nombreDeCuenta, idDeCuenta,fechaDePago,cantidad)
+function pagoDeCuenta(id,nombreDeCuenta, idDeCuenta,fechaDePago,cantidad,ingreso)
 {
     this.id = id;
     this.name=nombreDeCuenta;
     this.accountId=idDeCuenta;
     this.date = fechaDePago;
     this.quantity=cantidad;
+    this.ingreso = ingreso;
 
 }
 var arregloDePagos=[];
@@ -46,17 +46,59 @@ function getDate()
 
 function addNewPayment() 
 {
-    
+    if(arregleDeCuentas.length==1)
+    {
+        saveAndDisablePayedAccounts();
+        document.getElementById('addButton').style.visibility = "hidden";
+        document.getElementById('doneButton').style.visibility = "visible";
+        return 0;
+    }
     var table = document.getElementById("pagosTable");
     var row = table.insertRow(-1);
     var cuentaCell = row.insertCell(0);
     var fechaCell = row.insertCell(1);
     var pagoCell = row.insertCell(2);
+    var selects = setSelectsForCells();
+    
+    if(count > 0)
+    {
+        saveAndDisablePayedAccounts();
+    }
+    for(var i = 0; i< arregleDeCuentas.length;i++)
+    {
+        var option = document.createElement("option");
+        option.setAttribute.id=arregleDeCuentas[i].id;
+        option.value=  arregleDeCuentas[i].name;
+        option.innerHTML=arregleDeCuentas[i].name;
+        selects[0].appendChild(option); 
+        
+    }
+       
+    cuentaCell.appendChild(selects[0]);
+    fechaCell.appendChild(selects[1]);
+    var dollarSign=document.createTextNode("$ ");
+    pagoCell.appendChild(dollarSign);
+    pagoCell.appendChild(selects[2]);
+    count++;
+    
+}
+
+function updateBalanceLbl()
+{
+   var ingreso = Number(document.getElementById('totalSueldoInput').value);
+  
+    var balance = ingreso;
+    document.getElementById('totalGastosLbl').innerHTML="$"+totalDePagos;
+    document.getElementById('balanceLbl').innerHTML="Balance: $"+(balance - totalDePagos);
+}
+
+function setSelectsForCells()
+{
     var selectCuenta = document.createElement("select");
     var selectFecha = document.createElement("input");
     var selectCantPago = document.createElement("input");
-    
-    selectCuenta.id="cuentaCell"+count;
+
+    selectCuenta.id="selectCuenta"+count;
 
     selectFecha.type= "date";
     selectFecha.style.width= 115;
@@ -67,11 +109,13 @@ function addNewPayment()
     selectCantPago.type ="number";
     selectCantPago.id ="cantPago"+count;
     selectCantPago.placeholder="$ 0.00";
-   
-    //for para insertar las diferentes opciones
-    if(count > 0)
-    {
-        var previousAccountCell = document.getElementById('cuentaCell'+(count-1));
+
+    return [selectCuenta,selectFecha,selectCantPago];
+}
+
+function saveAndDisablePayedAccounts()
+{
+     var previousAccountCell = document.getElementById('selectCuenta'+(count-1));
         var previousFechaCell = document.getElementById('fechaPago'+(count-1));
         var previousPagoCell = document.getElementById('cantPago'+(count-1));
 
@@ -99,64 +143,24 @@ function addNewPayment()
         updateBalanceLbl();
         arregloDePagos.push(pago);
 
-    }
-    for(var i = 0; i< arregleDeCuentas.length;i++)
-    {
-        var option = document.createElement("option");
-        option.setAttribute.id=arregleDeCuentas[i].id;
-        option.value=  arregleDeCuentas[i].name;
-        option.innerHTML=arregleDeCuentas[i].name;
-        selectCuenta.appendChild(option); 
-    }
-    if(arregleDeCuentas.length  <= 1)
-    {
-        document.getElementById("addButton").disabled = "disabled";
-   
-    }
-        
-    cuentaCell.appendChild(selectCuenta);
-    fechaCell.appendChild(selectFecha);
-    var dollarSign=document.createTextNode("$ ");
-    pagoCell.appendChild(dollarSign);
-    pagoCell.appendChild(selectCantPago);
-
-    
-   
-    // cuentaCell.innerHTML = "<select id=\"cuentasDp"+count+"\"> <option value=\"0\">AEE</option> </select>";
-    //fechaCell.innerHTML = "<input style=\"width:115px;\" type=\"date\" id=\"fechaPago"+count+"\" value=curr_fecha placeholder=\"MM-DD-YYYY\" > ";
-    //pagoCell.innerHTML = "<input id=cantPago2 type=number style=\" width:100px\" onChange=\"updateBalanceLbl(this)\"/>";
-    count++;
-   
-    if(count >=3)
-    {
-
-        for(var i=0;i<arregloDePagos.length;i++)
-        {
-            console.log(arregloDePagos[i]);
-        }
-    }
-    // totalDePagos += document.getElementById("cantPago"+count).value;
 }
 
-function updateBalanceLbl()
+function paymentsDone()
 {
-   var ingreso = Number(document.getElementById('totalSueldoInput').value);
-  
-    var balance = ingreso;
-    document.getElementById('totalGastosLbl').innerHTML="$"+totalDePagos;
-    document.getElementById('balanceLbl').innerHTML="Balance: $"+(balance - totalDePagos)+".00";
+    var weekPaySummary = saveWeekPayment();
+    console.log(weekPaySummary[0]);
+    console.log(weekPaySummary[1]);
+    console.log(weekPaySummary[2]);
+    var myWindow = window.open("http://logdecuentas.azurewebsites.net/htmls/home.html", "_self");
+
 }
 
-// function updateIngreso()
-// {
-//     var ingreso = document.getElementById('totalSueldoInput').value;
-//   var balance=ingreso;
-//   document.getElementById('balanceLbl').innerHTML="Balance: $"+balance+".00";
-//   console.log("CaMBIEEE");
-// }
+function saveWeekPayment()
+{
 
-// function updateGastos(pago)
-// {
-//     var gastosTotales+=pago;
-
-// }
+    var ingresoDeSemana = document.getElementById('totalSueldoInput').value;
+    var totalDeGastos = totalDePagos;
+    var balanceDeSemana = ingresoDeSemana-totalDeGastos;
+    
+    return [ingresoDeSemana,balanceDeSemana,totalDeGastos];
+}
