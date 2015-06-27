@@ -108,7 +108,7 @@ function addNewPayment()
         option.innerHTML=arregleDeCuentas[i].name;
         selectCuenta.appendChild(option); 
     }
-    if(arregleDeCuentas.length == 0)
+    if(arregleDeCuentas.length  <= 1)
     {
         document.getElementById("addButton").disabled = "disabled";
    
