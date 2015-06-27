@@ -1,4 +1,4 @@
-//var ingreso = document.getElementById('totalSueldoInput').value;
+var ingreso = document.getElementById('totalSueldoInput').value;
 var totalDePagos=0;
 var count=0;
 
