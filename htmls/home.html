@@ -4,8 +4,9 @@
 	<title>Home</title>
 	<meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <script src="http://neue.cc/linq.min.js"></script>
 </head>
-<body onload="getDate()">
+<body onload="start()">
 	
   <h1>
     <img src="../images/carla.jpg" name="profilePic" alt="Profile Picture" style="width:128px;height:128px;">Carmen 
@@ -40,28 +41,42 @@
   		<option value="11">Diciembre</option>
 		</select>
 
-		<article>
-			<p id="date"></p>
-			 <table class="weekTable">
+		
+		<br />
+
+		<article id="weekDetail">
+			<br />
+
+            <label id="ingresoLbl">Ingreso: <input type="number" id="totalSueldoInput" style="width:100px" onchange="updateBalanceLbl(this)"/></label>
+            
+            <label id="balanceLbl"> Balance: <label id="Label1">$0.00</label></label>
+                <br /><br />
+
+                <table id="pagosTable" class="weekTable">
                     <tr>
-                        <td id="cuenta">Cuenta</td>
-                        <td id="pago">
-                            Pago
-                        </td>
-      
+                        <th id="cuenta">Cuenta</th>
+                        <th id="pago">Fecha</th>
+                        <th id="Th1">Pago</th>
                     </tr>
-                    <tr>
-                        <td >
-                            Row 1
-                        </td>
-                        <td>
-                            Row 1
-                        </td>
-                    </tr>
-              
+                    <!-- <tr>
+                        <td> <select id="cuentaCell"> <option id=0 value="0">AEE</option> </select> </td>
+                        <td> <input style="width:75px;" type="date" id="fechaPago" max="2015-01-01" placeholder="MM-DD-YYY" > 
+                        <br /> <label id="formatLbls">MM-DD-YYYY</label>  </td>
+                        <td> <input id="cantPago" type ="number" style=" width:100px" onChange="updateBalanceLbl(this)"/></td>
+                    </tr> -->
+
                 </table>
 
-		</article>
+
+            <br /><br />
+            <div id="totalInfoDiv">
+                Total de Gastos: <label id="totalGastosLbl">$0.00</label>
+
+            </div>
+      <br />
+
+    </article>
+		
 		
 
 
