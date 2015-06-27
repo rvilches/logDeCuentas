@@ -108,7 +108,12 @@ function addNewPayment()
         option.innerHTML=arregleDeCuentas[i].name;
         selectCuenta.appendChild(option); 
     }
-       
+    if(arregleDeCuentas.length == 0)
+    {
+        document.getElementById("addButton").disabled = "disabled";
+   
+    }
+        
     cuentaCell.appendChild(selectCuenta);
     fechaCell.appendChild(selectFecha);
     var dollarSign=document.createTextNode("$ ");
