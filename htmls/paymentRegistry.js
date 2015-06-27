@@ -142,13 +142,13 @@ function updateBalanceLbl()
     document.getElementById('balanceLbl').innerHTML="Balance: $"+(balance - totalDePagos)+".00";
 }
 
-function updateIngreso()
-{
-    var ingreso = document.getElementById('totalSueldoInput').value;
-   var balance=ingreso;
-   document.getElementById('balanceLbl').innerHTML="Balance: $"+balance+".00";
-   console.log("CaMBIEEE");
-}
+// function updateIngreso()
+// {
+//     var ingreso = document.getElementById('totalSueldoInput').value;
+//   var balance=ingreso;
+//   document.getElementById('balanceLbl').innerHTML="Balance: $"+balance+".00";
+//   console.log("CaMBIEEE");
+// }
 
 // function updateGastos(pago)
 // {
