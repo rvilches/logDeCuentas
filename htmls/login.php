@@ -9,7 +9,7 @@
 <body>
 <?php
 $server = "tcp:cszcc1h0ac.database.windows.net,1433";
-$user = "kindergame"@cszcc1h0ac;
+$user = "kindergame";
 $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
 
