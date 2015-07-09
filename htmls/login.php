@@ -7,7 +7,9 @@
 </head>
 
 <body>
-
+<?php
+echo "Hello";
+?>
  <h1>Estado de cuentas - DEV<span id="signup"><a href="htmls/signup.html"><i>Sign Up</i></a></span></h1>
  
  <section>
