@@ -7,23 +7,7 @@
 </head>
 
 <body>
-<?php
-function connectToDB()
-{
- $server = "tcp:<value of SERVER from section above>";
-$user = "<value of USERNAME from section above>"@SERVER_ID;
-$pwd = "password";
-$db = "testdb";
 
-try{
-    $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
-    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-}
-catch(Exception $e){
-    die(print_r($e));
-}
-connectToDB();
-?>
  <h1>Estado de cuentas - DEV<span id="signup"><a href="htmls/signup.html"><i>Sign Up</i></a></span></h1>
  
  <section>
