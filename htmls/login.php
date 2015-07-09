@@ -14,12 +14,14 @@ $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
 
 try{
+	echo "trying...";
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     echo"connected";
 }
 catch(Exception $e){
     die(print_r($e));
+}
 
 ?>
  <h1>Estado de cuentas - DEV<span id="signup"><a href="htmls/signup.html"><i>Sign Up</i></a></span></h1>
