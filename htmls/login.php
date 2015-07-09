@@ -22,7 +22,7 @@ try{
 catch(Exception $e){
     die(print_r($e));
 }
-
+$conn=null;
 ?>
  <h1>Estado de cuentas - DEV<span id="signup"><a href="htmls/signup.html"><i>Sign Up</i></a></span></h1>
  
