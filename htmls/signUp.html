@@ -5,6 +5,10 @@
 	<link rel="stylesheet" type="text/css" href="../css/signup.css">
 </head>
 <body onload = "getUser()" >
+	<?php 
+ echo $_GET["firstname"]; <br>
+Your email address is:  echo $_GET["email"]; 
+?>
 	<h2 id="bodyh2">Sign Up</h2>
 	<section>
 		<form id = "userForm" action=" " method="get">
@@ -27,10 +31,7 @@
 
 
 		</form>
-		<?php 
- echo $_GET["firstname"]; <br>
-Your email address is:  echo $_GET["email"]; 
-?>
+
 
 	</section>
 <script type="text/javascript" src = "signup.js"></script>
