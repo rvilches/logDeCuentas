@@ -25,7 +25,7 @@ catch(Exception $e){
 $conn=null;
 echo "disconnected";
 ?>
- <h1>Estado de cuentas - DEV<span id="signup"><a href="htmls/signup.php"><i>Sign Up</i></a></span></h1>
+ <h1>Estado de cuentas - DEV<span id="signup"><a href="htmls/signUp.php"><i>Sign Up</i></a></span></h1>
  
  <section>
  	<h3>Login:</h3>
