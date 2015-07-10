@@ -4,7 +4,7 @@
 	<title>Subscribe</title>
 	<link rel="stylesheet" type="text/css" href="../css/signup.css">
 </head>
-<body onload = "getUser()" >
+<body <!-- onload = "getUser()" --> >
 	<?php 
  echo $_GET["firstname"]; <br>
 Your email address is:  echo $_GET["email"]; 
