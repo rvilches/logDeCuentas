@@ -37,8 +37,8 @@ Your email address is:  echo $_GET["email"];
 
 <?php
 
- echo $_POST["firstName"]; 
- echo $_POST["lastName"]; 
+ echo $_POST["firstname"]; 
+ echo $_POST["lastname"]; 
 
 ?>
 </body>
