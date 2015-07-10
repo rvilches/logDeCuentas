@@ -1,6 +1,8 @@
-<?php
+<html>
+<body>
 
- echo $_POST["firstName"]; 
- echo $_POST["lastName"]; 
+ <?php echo $_POST["firstName"]; <br>
+Your email address is:  echo $_POST["email"]; ?>
 
-?>
+</body>
+</html> 
