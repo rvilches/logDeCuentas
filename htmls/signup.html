@@ -7,7 +7,7 @@
 <body onload = "getUser()" >
 	<h2 id="bodyh2">Sign Up</h2>
 	<section>
-		<form id = "userForm" action="signUp.php" method="post">
+		<form id = "userForm" action="" method="post">
 		
 		First Name:
 		<br><input type="text" name="firstname" placeholder="firstname" autofocus ="autofocus" onchange="getUser()" required><br><hr>
@@ -27,6 +27,11 @@
 
 
 		</form>
+		<?php 
+ echo $_POST["firstname"]; <br>
+Your email address is:  echo $_POST["email"]; 
+?>
+
 	</section>
 <script type="text/javascript" src = "signup.js"></script>
 
