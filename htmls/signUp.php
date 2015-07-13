@@ -93,7 +93,9 @@ catch(Exception $e){
   		$secondlastname = test_input($_POST["secondLastname"]);
   		if($connected==true)
   		$sql ="INSERT INTO users (firstName,lastName,secondLastName,username,email,password) VALUES 
-  		($firstName,$lastname,$secondLastname,$username,$email,$password)"
+  		($firstName,$lastname,$secondLastname,$username,$email,$password)";
+  		$conn->exec($sql);
+  		echo "New record created successfully";
   		
 		}
 
