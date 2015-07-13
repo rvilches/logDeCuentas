@@ -33,13 +33,17 @@
  			} 
  			else 
  			{
- 				$email= test_input($_POST["email"])
- 				
- 				if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
+ 				echo "Result:" + filter_var($email, FILTER_VALIDATE_EMAIL);
+ 				if (filter_var($email, FILTER_VALIDATE_EMAIL)) 
  				{
+ 					echo "Hola1";
   				$emailErr = "Invalid email format"; 
 				}
-				
+				else
+				{
+					echo "Hola2";
+    			$email = test_input($_POST["email"]);
+				}  			
   			}
   			if (empty($_POST["lastname"])) 
   			{
@@ -115,7 +119,7 @@ function test_input($data) {
 
 
 	</section>
-<script type="text/javascript" src = "signup.js"></script>
+
 <?php
 echo "<h2>Your Input:</h2>";
 echo $firstname;
@@ -131,6 +135,6 @@ echo "<br>";
 echo $email;
 
 ?>
-
+<script type="text/javascript" src = "signup.js"></script>
 </body>
 </html>
