@@ -98,12 +98,10 @@ function connectToDb($firstname,$lastname,$secondlastname,$email,$password,$user
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     echo "connected";
-    $sql = "ALTER TABLE users DROP COLUMN ID";
-    $conn->exec($sql);
-    // $sql ="INSERT INTO users (firstName, lastName, secondLastName, email, password, username) VALUES 
-  		// ('$firstname', '$lastname', '$secondlastname', '$email', '$password', '$username')";
-  		// $conn->exec($sql);
-  		// echo "New record created successfully";
+    $sql ="INSERT INTO users (firstName, lastName, secondLastName, email, password, username) VALUES 
+  		('$firstname', '$lastname', '$secondlastname', '$email', '$password', '$username')";
+  		$conn->exec($sql);
+  		echo "New record created successfully";
     
     }
 	catch(Exception $e)
