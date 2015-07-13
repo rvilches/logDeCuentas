@@ -35,10 +35,12 @@
  			{
  				if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
  				{
+ 					echo "Hola1";
   				$emailErr = "Invalid email format"; 
 				}
 				else
 				{
+					echo "Hola2";
     			$email = test_input($_POST["email"]);
 				}  			
   			}
