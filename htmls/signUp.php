@@ -29,7 +29,7 @@ function test_input($data) {
 
 	<h2 id="bodyh2">Sign Up</h2>
 	<section>
-		<form id = "userForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+		<form id = "userForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
 		
 		First Name:
 		<br><input type="text" name="firstname" placeholder="firstname" autofocus ="autofocus" onchange="getUser()" required><br><hr>
