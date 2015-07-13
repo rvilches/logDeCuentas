@@ -75,8 +75,20 @@
 
  
   	$secondlastname = test_input($_POST["secondLastname"]);
+  	connectToDb($firstname,$lastname,$secondlastname,$email,$password,$username);
 
-  	$server = "tcp:cszcc1h0ac.database.windows.net,1433";
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+function connectToDb($firstname,$lastname,$secondlastname,$email,$password,$username)
+{
+	$server = "tcp:cszcc1h0ac.database.windows.net,1433";
 	$user = "kindergame";
 	$pwd = "baconPancakes#12345";
 	$db = "lodDeCuentas_db";
@@ -85,6 +97,11 @@
 	echo "trying...";
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+    echo "connected";
+    $sql ="INSERT INTO users (firstName, lastName, secondLastName, email, password, username) VALUES 
+  		($firstname, $lastname, $secondlastname, $email, $password, $username)";
+  		$conn->exec($sql);
+  		echo "New record created successfully";
     
     }
 	catch(Exception $e)
@@ -92,17 +109,6 @@
     die(print_r($e));
 	}
 
-	$sql ="INSERT INTO users (firstName, lastName, secondLastName, email, password, username) VALUES 
-  		($firstname, $lastname, $secondlastname, $email, $password, $username)";
-  		$conn->exec($sql);
-  		echo "New record created successfully";
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
 }
 ?>
 
