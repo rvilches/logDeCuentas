@@ -34,7 +34,7 @@
  			else 
  			{
  				$email = test_input($POST["email"]);
- 				if (filter_var($email, FILTER_VALIDATE_EMAIL)) 
+ 				if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
  				{
   				$emailErr = "Invalid email format"; 
 				}
