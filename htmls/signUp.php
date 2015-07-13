@@ -17,7 +17,14 @@
   			} 
   			else 
   			{
+  				if (!preg_match("/^[a-zA-Z ]*$/",$firstname)) 
+  				{
+  				$firstnameErr = "Only letters and white space allowed"; 
+  				}
+  				else
+  				{
     			$firstname = test_input($_POST["firstname"]);
+    			}
  			}
 
   			if (empty($_POST["email"])) 
@@ -26,7 +33,14 @@
  			} 
  			else 
  			{
-    		$email = test_input($_POST["email"]);
+ 				if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
+ 				{
+  				$emailErr = "Invalid email format"; 
+				}
+				else
+				{
+    			$email = test_input($_POST["email"]);
+				}  			
   			}
   			if (empty($_POST["lastname"])) 
   			{
@@ -34,7 +48,15 @@
  			} 
  			else 
  			{
-    		$lastname = test_input($_POST["lastname"]);
+ 				if (!preg_match("/^[a-zA-Z ]*$/",$lastname)) 
+  				{
+  				$lastnameErr = "Only letters and white space allowed"; 
+  				}
+  				else
+  				{
+    			$lastname= test_input($_POST["lastname"]);
+    			}
+    		
   			}
   			if (empty($_POST["password"])) 
   			{
