@@ -8,8 +8,8 @@
 <?php
 	 $firstname=$lastname=$secondlastname=$username=$password=$email="";
 	 $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
-	$firstnameBool=FALSE;
-	$lastnameBool=FALSE;
+	$firstnameBool=$lasnameBool=FALSE;
+	
 	//$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=FALSE;
 
 	 if($_SERVER["REQUEST_METHOD"]=="POST")
