@@ -7,14 +7,56 @@
 <body>
 <?php
 	 $firstname=$lastname=$secondlastname=$username=$password=$email=" ";
+	 $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr=" ";
 	 if($_SERVER["REQUEST_METHOD"]=="POST")
 	 	{
-  		$firstname = test_input($_POST["firstname"]);
-  		$lastname = test_input($_POST["lastname"]);
-  		$email = test_input($_POST["email"]);
+
+	 		if (empty($_POST["firstname"])) 
+	 		{
+    			$firstnameErr = "Name is required";
+  			} 
+  			else 
+  			{
+    			$firstname = test_input($_POST["firstname"]);
+ 			}
+
+  			if (empty($_POST["email"])) 
+  			{
+    			$emailErr = "Email is required";
+ 			} 
+ 			else 
+ 			{
+    		$email = test_input($_POST["email"]);
+  			}
+  			if (empty($_POST["lastname"])) 
+  			{
+    			$lastnameErr = "Lastname is required";
+ 			} 
+ 			else 
+ 			{
+    		$lastname = test_input($_POST["lastname"]);
+  			}
+  			if (empty($_POST["password"])) 
+  			{
+    			$passwordErr = "Password is required";
+ 			} 
+ 			else 
+ 			{
+    		$password = test_input($_POST["password"]);
+  			}
+  			if (empty($_POST["username"])) 
+  			{
+    			$usernameErr = "username is Required";
+ 			} 
+ 			else 
+ 			{
+    		$username = test_input($_POST["username"]);
+  			}
+
+ 
   		$secondlastname = test_input($_POST["secondlastname"]);
-  		$password = test_input($_POST["password"]);
-  		$username = test_input($_POST["username"]);
+  		
+  		
 		}
 
 function test_input($data) {
@@ -32,9 +74,9 @@ function test_input($data) {
 		<form id = "userForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
 		
 		First Name:
-		<br><input type="text" name="firstname" placeholder="firstname" autofocus ="autofocus" onchange="getUser()" required><br><hr>
+		<br><input type="text" name="firstname" placeholder="firstname" autofocus ="autofocus"><span class="error">* <?php echo $firstnameErr;?></span><br><hr>
 		Lastname:
-		<br><input type="text" name="lastname" placeholder="lastname" onchange="getUser()" required ><br><hr>
+		<br><input type="text" name="lastname" placeholder="lastname"><span class="error">* <?php echo $lastnameErr;?></span><br><hr>
 		Second Lastname:
 		<br><input type="text" name="secondLastname" placeholder="secondlastname" onchange="getUser()" required><br><hr>
 		Username:
