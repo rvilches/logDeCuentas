@@ -78,7 +78,7 @@ function test_input($data) {
 		Lastname:
 		<br><input type="text" name="lastname" placeholder="lastname"><span class="error">* <?php echo $lastnameErr;?></span><br><hr>
 		Second Lastname:
-		<br><input type="text" name="secondLastname" placeholder="secondlastname" onchange="getUser()"><br><hr>
+		<br><input type="text" name="secondLastname" placeholder="secondlastname" ><br><hr>
 		Username:
 		<br><input type="text" name="username" placeholder="username" ><span class="error">* <?php echo $usernameErr;?></span><br><hr>
 		Password:
