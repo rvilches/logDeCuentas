@@ -6,8 +6,8 @@
 </head>
 <body>
 <?php
-	 $firstname=$lastname=$secondlastname=$username=$password=$email=" ";
-	 $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr=" ";
+	 $firstname=$lastname=$secondlastname=$username=$password=$email="";
+	 $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
 	 if($_SERVER["REQUEST_METHOD"]=="POST")
 	 	{
 
@@ -74,7 +74,7 @@
   			}
 
  
-  		$secondlastname = test_input($_POST["secondlastname"]);
+  		$secondlastname = test_input($_POST["secondLastname"]);
   		
   		
 		}
