@@ -30,6 +30,10 @@ body
 	margin-right: auto;
 
 }
+.error
+{
+	color:red;
+}
 #incEmail
 {
 	color:transparent;
