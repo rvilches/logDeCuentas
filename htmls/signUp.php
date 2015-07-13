@@ -33,14 +33,9 @@
  			} 
  			else 
  			{
- 				if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
- 				{
-  				$emailErr = "Invalid email format"; 
-				}
-				else
-				{
+ 				
     			$email;
-				}  			
+				  			
   			}
   			if (empty($_POST["lastname"])) 
   			{
