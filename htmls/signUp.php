@@ -128,6 +128,9 @@ echo "<br>";
 echo $password;
 echo "<br>";
 echo $lastname;
+echo "<br>";
+echo $email;
+
 ?>
 <script type="text/javascript" src = "signup.js"></script>
 </body>
