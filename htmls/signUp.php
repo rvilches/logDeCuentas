@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/signup.css">
 </head>
 <body>
-	<?php
+<?php
 	 $firstname=$lastname=$secondlastname=$username=$password=$email="";
 	 if($_SERVER["_REQUEST METHOD"]=="POST")
 	 	{
@@ -25,7 +25,7 @@ function test_input($data) {
 }
 ?>
 
-	?>
+	
 
 	<h2 id="bodyh2">Sign Up</h2>
 	<section>
