@@ -84,7 +84,7 @@
   	$secondlastname = test_input($_POST["secondLastname"]);
   	 if($firstnameBool==TRUE and $lastnameBool==TRUE and $secondlastnameBool==TRUE and $emailBool==TRUE and $passwordBool==TRUE
   	and $usernameBool==TRUE)
-  	
+  
   	{
   	connectToDb($firstname,$lastname,$secondlastname,$email,$password,$username);
   	}
