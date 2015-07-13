@@ -6,20 +6,7 @@
 </head>
 <body>
 <?php
-$server = "tcp:cszcc1h0ac.database.windows.net,1433";
-$user = "kindergame";
-$pwd = "baconPancakes#12345";
-$db = "lodDeCuentas_db";
-$connected = false;
-try{
-	echo "trying...";
-    $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
-    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    $connected=true;
-}
-catch(Exception $e){
-    die(print_r($e));
-}
+
 
 
 	 $firstname=$lastname=$secondlastname=$username=$password=$email="";
@@ -90,14 +77,25 @@ catch(Exception $e){
   			}
 
  
-  		$secondlastname = test_input($_POST["secondLastname"]);
-  		if($connected==true)
-  		$sql ="INSERT INTO users (firstName,lastName,secondLastName,username,email,password) VALUES 
-  		($firstName,$lastname,$secondLastname,$username,$email,$password)";
+  	$secondlastname = test_input($_POST["secondLastname"]);
+
+  	$server = "tcp:cszcc1h0ac.database.windows.net,1433";
+	$user = "kindergame";
+	$pwd = "baconPancakes#12345";
+	$db = "lodDeCuentas_db";
+	$connected = false;
+	try{
+	echo "trying...";
+    $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
+    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+    $sql ="INSERT INTO users (firstName,lastName,secondLastName,email,password,username) VALUES 
+  		($firstName,$lastname,$secondLastname,$email,$password,$username)";
   		$conn->exec($sql);
   		echo "New record created successfully";
-  		
-		}
+    }
+	catch(Exception $e){
+    die(print_r($e));
+	}
 
 function test_input($data) {
   $data = trim($data);
