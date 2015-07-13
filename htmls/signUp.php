@@ -115,7 +115,7 @@ function test_input($data) {
 
 
 	</section>
-
+<script type="text/javascript" src = "signup.js"></script>
 <?php
 echo "<h2>Your Input:</h2>";
 echo $firstname;
@@ -131,6 +131,6 @@ echo "<br>";
 echo $email;
 
 ?>
-<script type="text/javascript" src = "signup.js"></script>
+
 </body>
 </html>
