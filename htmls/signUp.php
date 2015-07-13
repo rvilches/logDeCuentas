@@ -10,12 +10,12 @@ $server = "tcp:cszcc1h0ac.database.windows.net,1433";
 $user = "kindergame";
 $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
-
+$connected = false;
 try{
 	echo "trying...";
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    echo"connected";
+    $connected==true;
 }
 catch(Exception $e){
     die(print_r($e));
@@ -91,7 +91,9 @@ catch(Exception $e){
 
  
   		$secondlastname = test_input($_POST["secondLastname"]);
-  		
+  		if($connected==true)
+  		$sql ="INSERT INTO users (firstName,lastName,secondLastName,username,email,password) VALUES 
+  		($firstName,$lastname,$secondLastname,$username,$email,$password)"
   		
 		}
 
