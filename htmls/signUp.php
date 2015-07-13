@@ -86,7 +86,7 @@
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $sql ="INSERT INTO users (firstName, lastName, secondLastName, email, password, username) VALUES 
-  		($firstName, $lastname, $secondLastname, $email, $password, $username)";
+  		($firstname, $lastname, $secondlastname, $email, $password, $username)";
   		$conn->exec($sql);
   		echo "New record created successfully";
     }
