@@ -1,12 +1,7 @@
-<!DOCTYPE html>	
-<html lang="en">
+
+<html>
 <body>
-
-<?php
-
- <h1>echo $_POST["firstname"];</h1> 
- echo $_POST["lastname"]; 
-
-?>
+Welcome <?php echo $_POST["firstname"]; ?><br>
+Your email address is: <?php echo $_POST["email"]; ?>
 </body>
 </html>
