@@ -6,6 +6,22 @@
 </head>
 <body>
 <?php
+$server = "tcp:cszcc1h0ac.database.windows.net,1433";
+$user = "kindergame";
+$pwd = "baconPancakes#12345";
+$db = "lodDeCuentas_db";
+
+try{
+	echo "trying...";
+    $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
+    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+    echo"connected";
+}
+catch(Exception $e){
+    die(print_r($e));
+}
+
+
 	 $firstname=$lastname=$secondlastname=$username=$password=$email="";
 	 $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
 	 if($_SERVER["REQUEST_METHOD"]=="POST")
