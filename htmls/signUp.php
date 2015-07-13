@@ -6,9 +6,6 @@
 </head>
 <body>
 <?php
-
-
-
 	 $firstname=$lastname=$secondlastname=$username=$password=$email="";
 	 $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
 	 if($_SERVER["REQUEST_METHOD"]=="POST")
@@ -83,7 +80,7 @@
 	$user = "kindergame";
 	$pwd = "baconPancakes#12345";
 	$db = "lodDeCuentas_db";
-	$connected = false;
+	
 	try{
 	echo "trying...";
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
@@ -93,9 +90,11 @@
   		$conn->exec($sql);
   		echo "New record created successfully";
     }
-	catch(Exception $e){
+	catch(Exception $e)
+	{
     die(print_r($e));
 	}
+}
 
 function test_input($data) {
   $data = trim($data);
