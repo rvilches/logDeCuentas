@@ -41,7 +41,10 @@
  				{
   				$emailErr = "Invalid email format"; 
 				}
+				else
+				{
 				$emailBool=TRUE;
+				}
 				 			
   			}
   			if (empty($_POST["lastname"])) 
@@ -80,7 +83,7 @@
     		$username = test_input($_POST["username"]);
   			}
 
- 	$secondlastname=TRUE;
+ 	$secondlastnameBool=TRUE;
   	$secondlastname = test_input($_POST["secondLastname"]);
   	 if($firstnameBool==TRUE and $lastnameBool==TRUE and $secondlastnameBool==TRUE and $emailBool==TRUE and $passwordBool==TRUE
   	and $usernameBool==TRUE)
