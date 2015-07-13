@@ -94,7 +94,7 @@ function test_input($data) {
 		<form id = "userForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
 		
 		First Name:
-		<br><input type="text" name="firstname" placeholder="firstname" autofocus ="autofocus"><span class="error">* <?php echo $firstnameErr;?></span><br><hr>
+		<br><input type="text" name="firstname" placeholder="firstname" value="$firstname" autofocus ="autofocus"><span class="error">* <?php echo $firstnameErr;?></span><br><hr>
 		Lastname:
 		<br><input type="text" name="lastname" placeholder="lastname"><span class="error">* <?php echo $lastnameErr;?></span><br><hr>
 		Second Lastname:
