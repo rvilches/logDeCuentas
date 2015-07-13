@@ -4,7 +4,7 @@
 	<title>Subscribe</title>
 	<link rel="stylesheet" type="text/css" href="../css/signup.css">
 </head>
-<body <!-- onload = "getUser()" --> >
+<body onload = "getUser()">
 
 	<h2 id="bodyh2">Sign Up</h2>
 	<section>
