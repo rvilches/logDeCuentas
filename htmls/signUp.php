@@ -8,7 +8,7 @@
 <?php
 	 $firstname=$lastname=$secondlastname=$username=$password=$email="";
 	 $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
-	$firstnameBool=$lastnameBool=$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=false;
+	$firstnameBool=$lastnameBool=$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=FALSE;
 	 if($_SERVER["REQUEST_METHOD"]=="POST")
 	 	{
 
@@ -25,7 +25,7 @@
   				else
   				{
     			$firstname = test_input($_POST["firstname"]);
-    			$firstnameBool=true;
+    			$firstnameBool=TRUE;
     			}
  			}
 
@@ -40,7 +40,7 @@
  				{
   				$emailErr = "Invalid email format"; 
 				}
-				$emailBool=true;
+				$emailBool=TRUE;
 				 			
   			}
   			if (empty($_POST["lastname"])) 
@@ -55,7 +55,7 @@
   				}
   				else
   				{
-  				$lastnameBool=true;
+  				$lastnameBool=TRUE;
     			$lastname= test_input($_POST["lastname"]);
     			}
     		
@@ -66,7 +66,7 @@
  			} 
  			else 
  			{
- 			$passwordBool=true;
+ 			$passwordBool=TRUE;
     		$password = test_input($_POST["password"]);
   			}
   			if (empty($_POST["username"])) 
@@ -75,14 +75,14 @@
  			} 
  			else 
  			{
- 			$usernameBool=true;
+ 			$usernameBool=TRUE;
     		$username = test_input($_POST["username"]);
   			}
 
- 	$secondlastname=true;
+ 	$secondlastname=TRUE;
   	$secondlastname = test_input($_POST["secondLastname"]);
-  	if($firstnameBool==true && $lastnameBool==true &&$secondlastnameBool==true && $emailBool==true && $passwordBool==true
-  		$usernameBool==true)
+  	if($firstnameBool==TRUE && $lastnameBool==TRUE &&$secondlastnameBool==TRUE && $emailBool==TRUE && $passwordBool==TRUE
+  		$usernameBool==TRUE)
   	{
   	connectToDb($firstname,$lastname,$secondlastname,$email,$password,$username);
   	}
