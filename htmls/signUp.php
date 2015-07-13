@@ -15,7 +15,7 @@ try{
 	echo "trying...";
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    $connected==true;
+    $connected=true;
 }
 catch(Exception $e){
     die(print_r($e));
