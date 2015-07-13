@@ -106,10 +106,10 @@ function connectToDb($firstname,$lastname,$secondlastname,$email,$password,$user
 	$db = "lodDeCuentas_db";
 	
 	try{
-	echo "trying...";
+	
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    echo "connected";
+    
     $sql ="INSERT INTO users (firstName, lastName, secondLastName, email, password, username) VALUES 
   		('$firstname', '$lastname', '$secondlastname', '$email', '$password', '$username')";
   		$conn->exec($sql);
@@ -152,21 +152,6 @@ function connectToDb($firstname,$lastname,$secondlastname,$email,$password,$user
 
 	</section>
 
-<?php
-echo "<h2>Your Input:</h2>";
-echo $firstname;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $username;
-echo "<br>";
-echo $password;
-echo "<br>";
-echo $lastname;
-echo "<br>";
-echo $email;
-
-?>
 <script type="text/javascript" src = "signup.js"></script>
 </body>
 </html>
