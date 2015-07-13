@@ -6,8 +6,8 @@
 </head>
 <body>
 <?php
-	 $firstname=$lastname=$secondlastname=$username=$password=$email="Algo";
-	 if($_SERVER["_REQUEST METHOD"]=="POST")
+	 $firstname=$lastname=$secondlastname=$username=$password=$email=" ";
+	 if($_SERVER["REQUEST_METHOD"]=="POST")
 	 	{
   		$firstname = test_input($_POST["firstname"]);
   		$lastname = test_input($_POST["lastname"]);
