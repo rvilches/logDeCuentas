@@ -9,7 +9,8 @@
 	 $firstname=$lastname=$secondlastname=$username=$password=$email="";
 	 $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
 	$firstnameBool=FALSE;
-	// $lastnameBool=$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=FALSE;
+	$lastnameBool=FALSE;
+	//$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=FALSE;
 
 	 if($_SERVER["REQUEST_METHOD"]=="POST")
 	 	{
@@ -57,7 +58,7 @@
   				}
   				else
   				{
-  				//$lastnameBool=TRUE;
+  				$lastnameBool=TRUE;
     			$lastname= test_input($_POST["lastname"]);
     			}
     		
@@ -85,7 +86,7 @@
   	$secondlastname = test_input($_POST["secondLastname"]);
   	// if($firstnameBool==TRUE && $lastnameBool==TRUE &&$secondlastnameBool==TRUE && $emailBool==TRUE && $passwordBool==TRUE
   	// 	$usernameBool==TRUE)
-  	if($firstnameBool==TRUE)
+  	if($firstnameBool==TRUE and $lastnameBool==TRUE)
   	{
   	connectToDb($firstname,$lastname,$secondlastname,$email,$password,$username);
   	}
