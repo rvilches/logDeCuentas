@@ -52,7 +52,7 @@ function test_input($data) {
 
 
 	</section>
-<script type="text/javascript" src = "signup.js"></script>
+
 <?php
 echo "<h2>Your Input:</h2>";
 echo $firstname;
@@ -65,6 +65,6 @@ echo $password;
 echo "<br>";
 echo $lastname;
 ?>
-
+<script type="text/javascript" src = "signup.js"></script>
 </body>
 </html>
