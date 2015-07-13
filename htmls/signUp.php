@@ -39,7 +39,7 @@
 				}
 				else
 				{
-    			$email = test_input($_POST["email"]);
+    			$email;
 				}  			
   			}
   			if (empty($_POST["lastname"])) 
