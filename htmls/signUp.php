@@ -78,14 +78,14 @@ function test_input($data) {
 		Lastname:
 		<br><input type="text" name="lastname" placeholder="lastname"><span class="error">* <?php echo $lastnameErr;?></span><br><hr>
 		Second Lastname:
-		<br><input type="text" name="secondLastname" placeholder="secondlastname" onchange="getUser()" required><br><hr>
+		<br><input type="text" name="secondLastname" placeholder="secondlastname" onchange="getUser()"><br><hr>
 		Username:
-		<br><input type="text" name="username" placeholder="username" onchange="getUser()" required><br><hr>
+		<br><input type="text" name="username" placeholder="username" ><span class="error">* <?php echo $usernameErr;?></span><br><hr>
 		Password:
-		<br><input type="password" name="password" placeholder="password" onchange="getUser()" required><br><hr>
+		<br><input type="password" name="password" placeholder="password"><span class="error">* <?php echo $passwordErr;?></span><br><hr>
 		
 		email:
-		<br><input type="text" name="email" placeholder="email" onchange="getUser()" required><span id="incEmail">* Invalid Email</span><br><hr>
+		<br><input type="text" name="email" placeholder="email" ><span class="error">* <?php echo $emailErr;?></span><br><hr>
 
 		<input id="submit" type="submit" name="submit" value="create account">
 
