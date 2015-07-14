@@ -35,7 +35,7 @@ try{
     $stmt->execute();
     while($user=$stmt->fetch())
     {
-    	echo $user['firstName'];
+    	echo $user['lastName'];
     }
 }
 catch(Exception $e)
