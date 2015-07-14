@@ -36,12 +36,15 @@ try{
 	$user = $stmt->fetch();
     if(count($user)>1)
     {
-    	echo $user['userID'];
+    	$_SESSION['login_user']=$user['username'];
+    	header("location:http://logdecuentas.azurewebsites.net/htmls/home.html");
     }
     else
     {
     	echo "sorry you are not an customer";
     }
+
+
 }
 catch(Exception $e)
 	{
