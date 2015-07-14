@@ -33,11 +33,10 @@ try{
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $stmt=$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
     $stmt->execute();
+	$user = $stmt->fetch();
     if(count($user)>0)
     {
     	echo "era mayor + count($user)";
-    	
-    	$user = $stmt->fetch();
     	echo $user['lastName'];
     }
     else
