@@ -36,7 +36,7 @@ try{
     $sql ="SELECT * FROM users WHERE username='global $username' AND password=' global $password'";
   	$conn->exec($sql);
   	$result = $conn->query($sql);
-  	if ($result->num_rows > 0) {
+  	if ($result->num_rows >= 0) {
     while($row = $result->fetch_assoc()) {
         echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
     }
