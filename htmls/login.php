@@ -11,8 +11,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 	}
 	else
 	{
-		$username=$_POST['username'];
-		$password=$_POST['password'];
+		GLOBAL $username=$_POST['username'];
+		GLOBAL $password=$_POST['password'];
 		connectTodb();
 	}
 }
