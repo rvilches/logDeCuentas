@@ -8,22 +8,7 @@
 
 <body>
 <?php
-$server = "tcp:cszcc1h0ac.database.windows.net,1433";
-$user = "kindergame";
-$pwd = "baconPancakes#12345";
-$db = "lodDeCuentas_db";
-
-try{
-	echo "trying...";
-    $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
-    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    echo"connected";
-}
-catch(Exception $e){
-    die(print_r($e));
-}
-$conn=null;
-echo "disconnected";
+include ('login.php');
 ?>
  <h1>Estado de cuentas - DEV<span id="signup"><a href="htmls/signUp.php"><i>Sign Up</i></a></span></h1>
  
@@ -31,13 +16,12 @@ echo "disconnected";
  	<h3>Login:</h3>
  	<article>
 
- 		<form>
+ 		<form action="" method="post">
  		<span class="formusername">Username:</span>
  		<br><input id="username" type="text" name="username" placeholder="username" ><br>
  		<span class="formpassword">Password:</span>
  		<br><input id="passwordinput" type="text" name="password" placeholder="password" ><br><br>
- 		<a id="submit" value="login" href="htmls/home.html">Login</a>
- 		<!-- <input type="submit" name="submit" value="Login" onclick="<a href=htmls/signup.html\">"><br> -->
+ 		<input type="submit" name="submit" value="Login"><br> 
  		
 		</form>
 
