@@ -1,5 +1,5 @@
 <?php
-echo "AQUI ESTPY!!";
+
 session_start();
 $error='';
 if($_SERVER["REQUEST_METHOD"]=="POST")
@@ -7,7 +7,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 	if(empty($POST['username'])||empty($POST['password']))
 	{
 		$error="Username or password is invalid";
-		echo "$error";
+		
 	}
 	else
 	{
