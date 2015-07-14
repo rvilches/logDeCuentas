@@ -39,7 +39,8 @@ try{
   	}
   	else
   	{
-  		echo "noup";
+
+  		echo "noup + $result_num_rows";
   	}
     
 	}
