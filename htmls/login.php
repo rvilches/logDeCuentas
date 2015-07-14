@@ -35,7 +35,7 @@ try{
   	$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
   	if($result)
   	{
-  	echo "gotemm + $result";
+  	echo "gotemm + $result[0]";
   	}
   	else
   	{
