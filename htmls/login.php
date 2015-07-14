@@ -33,14 +33,14 @@ try{
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $stmt =$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
   	$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-  	if($result_num_rows>0)
+  	if($result)
   	{
   	echo "gotemm";
   	}
   	else
   	{
 
-  		echo "noup + $result_num_rows";
+  		echo "noup + $result";
   	}
     
 	}
