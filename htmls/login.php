@@ -8,6 +8,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 	{
 		$error="Username or password is invalid";
 		echo "$error";
+		echo "$POST['username']";
 	}
 	else
 	{
