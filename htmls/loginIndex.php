@@ -1,3 +1,6 @@
+<?php
+include 'login.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +10,7 @@
 </head>
 
 <body>
-<?php
-include 'login.php';
-?>
+
  <h1>Estado de cuentas - DEV<span id="signup"><a href="htmls/signUp.php"><i>Sign Up</i></a></span></h1>
  
  <section>
