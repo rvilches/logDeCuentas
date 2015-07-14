@@ -33,7 +33,7 @@ try{
 	
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    $sql ="SELECT * FROM users WHERE username='global $username' AND password='$password'";
+    $sql ="SELECT * FROM users WHERE username='global $username' AND password=' global $password'";
   	$conn->exec($sql);
   	$result = $conn->query($sql);
   	if ($result->num_rows > 0) {
