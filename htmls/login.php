@@ -32,16 +32,10 @@ try{
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $stmt =$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
-  	$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-  	if($result)
-  	{
-  	echo "gotemm + $result[0]";
-  	}
-  	else
-  	{
-
-  		echo "noup + $result";
-  	}
+  	$result = $stmt->setFetchMode(PDO::FETCH_NUM);
+  	while ($row = $stmt->fetch()) {
+    print $row[0] . "\n";
+  }
     
 	}
 catch(Exception $e)
