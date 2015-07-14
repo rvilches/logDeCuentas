@@ -11,8 +11,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 	}
 	else
 	{
-		GLOBAL $username=$_POST['username'];
-		GLOBAL $password=$_POST['password'];
+		$username=$_POST['username'];
+		$password=$_POST['password'];
 		connectTodb();
 	}
 }
@@ -24,7 +24,8 @@ $server = "tcp:cszcc1h0ac.database.windows.net,1433";
 $user = "kindergame";
 $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
-
+global $username;
+global $password;
 try{
 	
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
