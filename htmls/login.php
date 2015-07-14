@@ -33,7 +33,7 @@ try{
 	
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username='$username AND password='$password'");
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
   	$stmt->execute();
   	$result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
   	foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
