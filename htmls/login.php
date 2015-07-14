@@ -30,8 +30,8 @@ try{
 	
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    $sql ="SELECT * FROM users WHERE username='$username' AND password='$password'";
-  	$conn->exec($sql);
+    $stmt =$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
+  	
   	echo "gotemm";
     
 	}
