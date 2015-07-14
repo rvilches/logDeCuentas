@@ -28,20 +28,17 @@ $db = "lodDeCuentas_db";
 global $username;
 global $password;
 
-echo "$username + user + $password";
+
 try{
 	
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    $sql ="SELECT * FROM users WHERE username='global $username' AND password=' global $password'";
-  	$conn->exec($sql);
-  	$result = $conn->query($sql);
-  	if ($result->num_rows >= 0) {
-    while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username='$username AND password='$password'");
+  	$stmt->execute();
+  	$result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+  	foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
+        echo $v;
     }
-} else {
-    echo "0 results";
 }
 $conn->close();
     
