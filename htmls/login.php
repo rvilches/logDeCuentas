@@ -36,7 +36,7 @@ try{
 	$user = $stmt->fetch();
     if(count($user)>1)
     {
-    	echo $user['lastName'];
+    	echo $user['userID'];
     }
     else
     {
