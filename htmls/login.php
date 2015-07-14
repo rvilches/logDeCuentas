@@ -28,7 +28,7 @@ $db = "lodDeCuentas_db";
 global $username;
 global $password;
 
-echo "$username + user";
+echo "$username + user + $password";
 try{
 	
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
