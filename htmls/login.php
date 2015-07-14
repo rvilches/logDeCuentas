@@ -2,7 +2,7 @@
 echo "AQUI ESTPY!!";
 session_start();
 $error='';
-if(isset($_POST['sumbit']))
+if($_SERVER["REQUEST_METHOD"]=="POST")
 {
 	if(empty($POST['username'])||empty($POST['password']))
 	{
