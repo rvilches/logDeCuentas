@@ -33,6 +33,7 @@ try{
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $stmt =$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
   	$result = $stmt->setFetchMode(PDO::FETCH_NUM);
+  	echo "here";
   	while ($row = $stmt->fetch()) {
     echo "something + $row[0] + '\n'";
   }
