@@ -60,3 +60,8 @@ function validateEmail (email)
 		return true;
 	}
 }
+
+function loadLoginPage()
+{
+	window.location.href="http://logdecuentas.azurewebsites.net/";
+}
