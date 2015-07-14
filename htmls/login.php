@@ -31,9 +31,7 @@ try{
 	
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    echo "here 0";
     $sql="SELECT * FROM users WHERE username='$username' AND password='$password'";
-    echo "here1";
   	try{
   	$stmt=$dbh->query($sql);
   	$result = $stmt->setFetchMode(PDO::FETCH_NUM);
