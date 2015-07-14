@@ -2,8 +2,8 @@
 echo "AQUI ESTPY!!";
 session_start();
 $error='';
-
-
+if(isset($_POST['sumbit']))
+{
 	if(empty($POST['username'])||empty($POST['password']))
 	{
 		$error="Username or password is invalid";
@@ -15,7 +15,7 @@ $error='';
 		$password=$_POST['password'];
 		connectTodb();
 	}
-
+}
 
 function connectTodb()
 {
