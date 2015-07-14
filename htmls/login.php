@@ -4,7 +4,7 @@ session_start();
 $error='';
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
-	if(empty($_POST['username'])||empty($POST['password']))
+	if(empty($_POST['username'])||empty($_POST['password']))
 	{
 		$error="Username or password is invalid";
 		echo "$error";
