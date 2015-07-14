@@ -32,11 +32,17 @@ try{
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $sql="SELECT * FROM users WHERE username='$username' AND password='$password'";
+  	try{
   	$stmt=$dbh->query($sql);
   	$result = $stmt->setFetchMode(PDO::FETCH_NUM);
   	echo "here";
   	while ($row = $stmt->fetch()) {
     echo "something + $row[0] + '\n'";
+	}
+	catch (PDOExeption $e)
+	{
+		echo "e + getMessage()";
+	}
   }
     
 	}
