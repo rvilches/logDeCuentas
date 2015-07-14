@@ -36,8 +36,8 @@ try{
 	$userdb= $stmt->fetch();
     if(count($userdb)>1)
     {
-    	$_SESSION['login_user']=$userdb['username'];
     	header('Location: http://logdecuentas.azurewebsites.net/htmls/home.php');
+    	$_SESSION['login_user']=$userdb['username'];
     }
     else
     {

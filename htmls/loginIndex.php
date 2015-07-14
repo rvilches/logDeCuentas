@@ -1,10 +1,11 @@
 <?php
-include 'login.php';
+
 
 if(isset($_SESSION['login_user']))
 {
 	header('Location: http://logdecuentas.azurewebsites.net/htmls/home.php');
 }
+include 'login.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
