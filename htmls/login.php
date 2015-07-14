@@ -25,14 +25,15 @@ $server = "tcp:cszcc1h0ac.database.windows.net,1433";
 $user = "kindergame";
 $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
-
+global $username;
+global $password;
 try{
 	
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $sql ="SELECT * FROM users WHERE username='$username' AND password='$password'";
   	$conn->exec($sql);
-  	echo "gotemm";
+  	echo "$sql";
     
 	}
 catch(Exception $e)
