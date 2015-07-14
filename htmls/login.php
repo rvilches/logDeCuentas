@@ -35,7 +35,8 @@ try{
     $stmt->execute();
     if(count($user)>0)
     {
-    	echo "era mayor";
+    	echo "era mayor + count($user)";
+    	
     	$user = $stmt->fetch();
     	echo $user['lastName'];
     }
