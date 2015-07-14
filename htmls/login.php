@@ -4,7 +4,7 @@ session_start();
 $error='';
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
-	if(empty($_POST['username'])||empty($_POST['password']))
+	if(empty($_POST['username'])||empty($POST['password']))
 	{
 		$error="Username or password is invalid";
 		echo "$error";
@@ -25,27 +25,21 @@ $server = "tcp:cszcc1h0ac.database.windows.net,1433";
 $user = "kindergame";
 $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
-global $username;
-global $password;
-
 
 try{
 	
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-   //  $stmt = $conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
-  	// $stmt->execute();
-  	// $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
-
-	}
-
+    $sql ="SELECT * FROM users WHERE username='$username' AND password='$password'";
+  	$conn->exec($sql);
+  	echo "gotemm";
     
 	}
 catch(Exception $e)
 	{
     die(print_r($e));
 	}
-$conn->close();
+
 
 
 }
