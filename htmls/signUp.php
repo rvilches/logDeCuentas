@@ -117,7 +117,10 @@ function connectToDb($firstname,$lastname,$secondlastname,$email,$password,$user
   		('$firstname', '$lastname', '$secondlastname', '$email', '$password', '$username')";
   		$conn->exec($sql);
   		echo "New record created successfully";
-  		loadLoginPage();
+  		echo '<script type="text/javascript" src = "signup.js">'
+   , 'loadLoginPage();'
+   , '</script>'
+;
     
     }
 	catch(Exception $e)
