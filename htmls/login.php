@@ -40,7 +40,7 @@ try{
     }
     else
     {
-    	echo "sorry you are not an customer";
+    	echo "<h1>sorry you are not an customer</h1>";
     }
 }
 catch(Exception $e)
