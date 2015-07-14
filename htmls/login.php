@@ -33,11 +33,11 @@ try{
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $stmt=$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
     $stmt->execute();
-	$user = $stmt->fetch();
-    if(count($user)>1)
+	$userdb= $stmt->fetch();
+    if(count($userdb)>0)
     {
-    	$_SESSION['login_user']=$user['username'];
-    	header("location:http://logdecuentas.azurewebsites.net/htmls/home.html");
+    	$_SESSION['login_user']=$userdb['username'];
+    	header("location:http://logdecuentas.azurewebsites.net/htmls/home.php");
     }
     else
     {
