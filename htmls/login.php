@@ -34,7 +34,7 @@ try{
     $stmt =$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
   	$result = $stmt->setFetchMode(PDO::FETCH_NUM);
   	while ($row = $stmt->fetch()) {
-    print $row[0] . "\n";
+    echo "something + $row[0] + '\n'";
   }
     
 	}
