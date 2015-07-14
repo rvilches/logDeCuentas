@@ -1,4 +1,5 @@
 <?php
+echo "AQUI ESTPY!!";
 session_start();
 $error='';
 if(isset($_POST['sumbit']))
