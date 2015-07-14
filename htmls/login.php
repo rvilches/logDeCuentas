@@ -37,7 +37,7 @@ try{
   	$stmt->execute();
   	$result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
   	foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
-        echo "result + $v";
+        echo $v;
     }
 }
 $conn->close();
