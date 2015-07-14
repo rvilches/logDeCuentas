@@ -34,7 +34,7 @@ try{
     $stmt=$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
     $stmt->execute();
 	$userdb= $stmt->fetch();
-    if(count($userdb)>0)
+    if(count($userdb)>1)
     {
     	$_SESSION['login_user']=$userdb['username'];
     	header("location:http://logdecuentas.azurewebsites.net/htmls/home.php");
