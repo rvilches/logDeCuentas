@@ -33,9 +33,14 @@ try{
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $stmt=$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
     $stmt->execute();
-    while($user=$stmt->fetch())
+    if(count($user)>0)
     {
+    	$user = $stmt->fetch();
     	echo $user['lastName'];
+    }
+    else
+    {
+    	echo "sorry your not an customer";
     }
 }
 catch(Exception $e)
