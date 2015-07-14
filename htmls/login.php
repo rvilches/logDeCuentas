@@ -27,6 +27,8 @@ $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
 global $username;
 global $password;
+
+echo "$username + user";
 try{
 	
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
