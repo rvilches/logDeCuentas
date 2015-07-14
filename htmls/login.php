@@ -34,15 +34,13 @@ try{
     $stmt=$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
     $stmt->execute();
 	$user = $stmt->fetch();
-	$count = count($user);
     if(count($user)>1)
     {
-    	echo "era mayor + $count";
     	echo $user['lastName'];
     }
     else
     {
-    	echo "sorry your not an customer";
+    	echo "sorry you are not an customer";
     }
 }
 catch(Exception $e)
