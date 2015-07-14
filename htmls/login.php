@@ -32,7 +32,7 @@ try{
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $stmt =$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
-  	
+  	$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
   	echo "gotemm";
     
 	}
