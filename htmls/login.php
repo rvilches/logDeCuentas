@@ -7,7 +7,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 	if(empty($POST['username'])||empty($POST['password']))
 	{
 		$error="Username or password is invalid";
-		
+		echo "$error";
 	}
 	else
 	{
@@ -24,7 +24,7 @@ $server = "tcp:cszcc1h0ac.database.windows.net,1433";
 $user = "kindergame";
 $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
-echo "ACAAAA";
+
 try{
 	
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
