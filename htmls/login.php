@@ -37,7 +37,7 @@ try{
     if(count($userdb)>1)
     {
     	$_SESSION['login_user']=$userdb['username'];
-    	header('Location: http://logdecuentas.azurewebsites.net/htmls/home.php');
+    	header('Location: /htmls/home.php');
     }
     else
     {

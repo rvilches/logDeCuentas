@@ -3,7 +3,7 @@ include 'login.php';
 
 if(isset($_SESSION['login_user']))
 {
-	header('Location: http://logdecuentas.azurewebsites.net/htmls/home.php');
+	header('Location: /htmls/home.php');
 }
 ?>
 <!DOCTYPE html>
