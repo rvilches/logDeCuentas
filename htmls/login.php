@@ -34,9 +34,10 @@ try{
     $stmt=$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
     $stmt->execute();
 	$user = $stmt->fetch();
+	$count = count($user);
     if(count($user)>0)
     {
-    	echo "era mayor + count($user)";
+    	echo "era mayor + $count";
     	echo $user['lastName'];
     }
     else
