@@ -36,7 +36,7 @@ try{
 	$userdb= $stmt->fetch();
     if(count($userdb)>1)
     {
-    	header('Location: http://logdecuentas.azurewebsites.net/htmls/loginIndex.php');
+    	header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
     	$_SESSION['login_user']=$userdb['username'];
     }
     else
