@@ -1,5 +1,5 @@
 <?php
-echo "something";
+
 ?>
 
 <!DOCTYPE html>
