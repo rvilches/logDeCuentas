@@ -1,4 +1,6 @@
-
+<?php
+include 'session.php';
+?>
 <!DOCTYPE html>
 <html lang = "en">
 <head>
@@ -8,9 +10,6 @@
     <script src="http://neue.cc/linq.min.js"></script>
 </head>
 <body onload="start()">
-	<?php
-include 'session.php';
-?>
   <h1>
     <img src="../images/carla.jpg" name="profilePic" alt="Profile Picture" style="width:128px;height:128px;">Carmen 
     <nav id="topNavigation">
