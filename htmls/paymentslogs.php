@@ -1,6 +1,6 @@
 <?php
 include 'login.php';
-echo "hola".$_SESSION['login_user'];
+echo $_SESSION['login_user'];
 
 $conn1=$_SESSION['conexion'];
 
