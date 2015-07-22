@@ -1,5 +1,7 @@
 <?php
-
+include 'login.php';
+global $conexion;
+echo $conexion;
 ?>
 
 <!DOCTYPE html>
