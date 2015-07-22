@@ -1,7 +1,6 @@
 <?php
 include 'login.php';
-//global $conexion;
-//echo "Hola $conexion";
+echo "hola".$_SESSION['conexion'];
 
 
 ?>
