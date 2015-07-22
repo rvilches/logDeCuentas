@@ -1,7 +1,8 @@
 <?php
 include 'login.php';
 global $conexion;
-echo $conexion;
+echo 'Hola' + $conexion;
+
 ?>
 
 <!DOCTYPE html>
