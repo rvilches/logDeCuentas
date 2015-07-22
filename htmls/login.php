@@ -14,8 +14,8 @@ try{
 	
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    global $conexion = $conn;
-    $stmt=$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
+    $_SESSION['conexion']=$conn;
+   	$stmt=$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
     $stmt->execute();
 	$userdb= $stmt->fetch();
 
@@ -23,6 +23,7 @@ try{
     {
     	header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
     	$_SESSION['login_user']=$userdb['username'];
+    
     }
     else
     {
