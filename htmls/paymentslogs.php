@@ -10,7 +10,7 @@ $userdb1= $stmt1->fetch();
 
     if(count($userdb1)>1)
     {
-      echo 'Hola!'.$userdb1[0];
+      echo 'Hola!';
 
     }
 
