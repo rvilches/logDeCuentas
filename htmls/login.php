@@ -14,10 +14,11 @@ try{
 	
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+    global $conexion = $conn;
     $stmt=$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
     $stmt->execute();
 	$userdb= $stmt->fetch();
-	global $conexion = $conn;
+
     if(count($userdb)>1)
     {
     	header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
