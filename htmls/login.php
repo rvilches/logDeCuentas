@@ -1,23 +1,5 @@
 <?php
 
-session_start();
-$error='';
-if($_SERVER["REQUEST_METHOD"]=="POST")
-{
-	if(empty($_POST['username'])||empty($_POST['password']))
-	{
-		$error="Username or password is invalid";
-		echo "$error";
-
-	}
-	else
-	{
-		$username=$_POST['username'];
-		$password=$_POST['password'];
-		connectTodb();
-	}
-}
-
 function connectTodb()
 {
 	
