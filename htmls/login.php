@@ -17,7 +17,7 @@ try{
     $stmt=$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
     $stmt->execute();
 	$userdb= $stmt->fetch();
-	global $conexion = "predo";
+	global $conexion = $conn;
     if(count($userdb)>1)
     {
     	header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
