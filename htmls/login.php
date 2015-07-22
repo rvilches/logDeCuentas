@@ -1,5 +1,22 @@
 <?php
-$conexion;
+
+session_start();
+$error='';
+if($_SERVER["REQUEST_METHOD"]=="POST")
+{
+	if(empty($_POST['username'])||empty($_POST['password']))
+	{
+		$error="Username or password is invalid";
+		echo "$error";
+
+	}
+	else
+	{
+		$username=$_POST['username'];
+		$password=$_POST['password'];
+		connectTodb();
+	}
+}
 
 function connectTodb()
 {
@@ -17,7 +34,6 @@ try{
     $stmt=$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
     $stmt->execute();
 	$userdb= $stmt->fetch();
-	global $conexion = $conn;
     if(count($userdb)>1)
     {
     	header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
