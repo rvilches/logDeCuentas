@@ -1,12 +1,9 @@
 <?php
 include 'login.php';
-
-<<<<<<< HEAD
-=======
 //global $conexion;
 //echo "Hola $conexion";
 
->>>>>>> origin/DevBrach
+
 ?>
 
 <!DOCTYPE html>
