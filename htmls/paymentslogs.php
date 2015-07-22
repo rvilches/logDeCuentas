@@ -2,7 +2,7 @@
 include 'login.php';
 echo "hola".$_SESSION['conexion'];
 
-$conn1=$_SESSION['conexion'];
+$conn1=$_SESSION['login_user'];
 
 $stmt1=$conn1->prepare("SELECT * FROM users WHERE username='rvil26'");
 $stmt1->execute();
