@@ -2,6 +2,18 @@
 include 'login.php';
 echo "hola".$_SESSION['conexion'];
 
+$conn=$_SESSION['conexion'];
+
+$stmt=$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
+    $stmt->execute();
+  $userdb= $stmt->fetch();
+
+    if(count($userdb)>1)
+    {
+      echo 'Hola!'.$userdb[0];
+ 
+    }
+
 
 ?>
 
