@@ -1,8 +1,8 @@
 <?php
 include 'login.php';
-echo "hola".$_SESSION['conexion'];
+echo "hola".$_SESSION['login_user'];
 
-$conn1=$_SESSION['login_user'];
+$conn1=$_SESSION['conexion'];
 
 $stmt1=$conn1->prepare("SELECT * FROM users WHERE username='rvil26'");
 $stmt1->execute();
