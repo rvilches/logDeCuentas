@@ -21,8 +21,9 @@ try{
 
     if(count($userdb)>1)
     {
-    	header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
     	$_SESSION['login_user']=$userdb['username'];
+    	header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
+    	
     
     }
     else
