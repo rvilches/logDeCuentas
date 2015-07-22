@@ -1,7 +1,8 @@
 <?php
 include 'login.php';
-global $conexion;
-echo "Hola $conexion";
+
+//global $conexion;
+//echo "Hola $conexion";
 
 ?>
 
