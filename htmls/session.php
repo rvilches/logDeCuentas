@@ -11,7 +11,7 @@ $db = "lodDeCuentas_db";
 
 if($_SERVER["REQUEST_METHOD"]=="POST")
         {
-            switch($_POST['action']) 
+            switch($_POST['act']) 
                 {
                     case 'login':
                     
