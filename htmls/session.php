@@ -5,7 +5,7 @@ $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
 //loginIndex.php connection to db
 
-    if($_SERVER["REQUEST_METHOD"]=="POST")
+if($_SERVER["REQUEST_METHOD"]=="POST")
         {
             if (isset($_POST['action'])) 
             {
@@ -156,5 +156,12 @@ $firstname=$lastname=$secondlastname=$username=$password=$email="";
 
 }
 
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
 }
 ?>
