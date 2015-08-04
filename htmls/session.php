@@ -1,10 +1,12 @@
 <?php
+
+echo "HELLO WORLD";
 $server = "tcp:cszcc1h0ac.database.windows.net,1433";
 $user = "kindergame";
 $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
 //loginIndex.php connection to db
-echo "HELLO WORLD";
+
 
 
 if($_SERVER["REQUEST_METHOD"]=="POST")
