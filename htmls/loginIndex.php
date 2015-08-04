@@ -35,13 +35,13 @@ if(isset($_SESSION['login_user']))
 
 <body>
 
- <h1>Estado de cuentas - DEV<span id="signup"><a href="htmls/signUp.php"><i>Sign Up</i></a></span></h1>
+ <h1>Estado de cuentas<span id="signup"><a href="htmls/signUp.php"><i>Sign Up</i></a></span></h1>
  
  <section>
  	<h3>Login:</h3>
  	<article>
 
- 		<form action="htmls/session.php" method="POST">
+ 		<form action="htmls/session.php" method="post">
  		<input type="hidden" name="action" value="login">
  		<span class="formusername">Username:</span>
  		<br><input id="username" type="text" name="username" placeholder="username" ><br>
