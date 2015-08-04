@@ -5,6 +5,7 @@ if(isset($_SESSION['login_user']))
 {
 	header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
 }
+//include 'login.php';
 include 'session.php';
 session_start();
 $error='';
@@ -41,7 +42,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
  	<article>
 
  		<form action="" method="post">
- 		<input type="hidden" name="action" value="login">
  		<span class="formusername">Username:</span>
  		<br><input id="username" type="text" name="username" placeholder="username" ><br>
  		<span class="formpassword">Password:</span>
