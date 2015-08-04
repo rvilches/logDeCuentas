@@ -5,6 +5,8 @@ $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
 //loginIndex.php connection to db
 echo "SESSION START";
+
+
 if($_SERVER["REQUEST_METHOD"]=="POST")
         {
             if (isset($_POST['action'])) 
@@ -28,6 +30,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                     }
                    
                 }
+            }
         }
 
 
@@ -64,102 +67,5 @@ catch(Exception $e)
     }
 }
 
-function signupForm()
-{
-$firstname=$lastname=$secondlastname=$username=$password=$email="";
-     $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
-    $firstnameBool=$lasnameBool=$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=FALSE;
 
-     if($_SERVER["REQUEST_METHOD"]=="POST")
-        {
-
-            if (empty($_POST["firstname"])) 
-            {
-                $firstnameErr = "Name is required";
-            } 
-            else 
-            {
-                if (!preg_match("/^[a-zA-Z ]*$/",$firstname)) 
-                {
-                $firstnameErr = "Only letters and white space allowed"; 
-                }
-                else
-                {
-                $firstname = test_input($_POST["firstname"]);
-                $firstnameBool=TRUE;
-                }
-            }
-
-            if (empty($_POST["email"])) 
-            {
-                $emailErr = "Email is required";
-            } 
-            else 
-            {
-                $email = test_input($_POST["email"]);
-                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
-                {
-                $emailErr = "Invalid email format"; 
-                }
-                else
-                {
-                $emailBool=TRUE;
-                }
-                            
-            }
-            if (empty($_POST["lastname"])) 
-            {
-                $lastnameErr = "Lastname is required";
-            } 
-            else 
-            {
-                if (!preg_match("/^[a-zA-Z ]*$/",$lastname)) 
-                {
-                $lastnameErr = "Only letters and white space allowed"; 
-                }
-                else
-                {
-                $lastnameBool=TRUE;
-                $lastname= test_input($_POST["lastname"]);
-                }
-            
-            }
-            if (empty($_POST["password"])) 
-            {
-                $passwordErr = "Password is required";
-            } 
-            else 
-            {
-            $passwordBool=TRUE;
-            $password = test_input($_POST["password"]);
-            }
-            if (empty($_POST["username"])) 
-            {
-                $usernameErr = "username is Required";
-            } 
-            else 
-            {
-            $usernameBool=TRUE;
-            $username = test_input($_POST["username"]);
-            }
-
-    $secondlastnameBool=TRUE;
-    $secondlastname = test_input($_POST["secondLastname"]);
-     if($firstnameBool==TRUE and $lastnameBool==TRUE and $secondlastnameBool==TRUE and $emailBool==TRUE and $passwordBool==TRUE
-    and $usernameBool==TRUE)
-  
-    {
-    connectToDb($firstname,$lastname,$secondlastname,$email,$password,$username);
-    }
-
-}
-
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
 ?>
