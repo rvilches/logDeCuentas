@@ -4,17 +4,15 @@ $user = "kindergame";
 $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
 //loginIndex.php connection to db
-echo "SESSION START";
+echo "HELLO WORLD";
 
 
 if($_SERVER["REQUEST_METHOD"]=="POST")
         {
-            if (isset($_POST['action'])) 
-            {
-                switch($_POST['action']) 
+            switch($_POST['action']) 
                 {
                     case 'login':
-                    {
+                    
                         if(empty($_POST['username'])||empty($_POST['password']))
                         {
                             $error="Username or password is invalid";
@@ -27,10 +25,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                             connectTodb();
                         }
                         break;
-                    }
-                   
-                }
-            }
+                }            
         }
 
 
