@@ -28,7 +28,7 @@ try{
     }
     else
     {
-    	echo "sorry you are not an customer";
+    	echo "SSorry you are not an customer";
     }
 
 
