@@ -42,6 +42,7 @@ if(isset($_SESSION['login_user']))
  	<article>
 
  		<form action="session.php" method="post">
+ 		<input type="hidden" name="action" value="login" />
  		<span class="formusername">Username:</span>
  		<br><input id="username" type="text" name="username" placeholder="username" ><br>
  		<span class="formpassword">Password:</span>
