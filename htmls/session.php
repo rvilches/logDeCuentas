@@ -1,5 +1,5 @@
 <?php
-<h1>HELLO</h1>
+
 echo "HELLO WORLD";
 $server = "tcp:cszcc1h0ac.database.windows.net,1433";
 $user = "kindergame";
