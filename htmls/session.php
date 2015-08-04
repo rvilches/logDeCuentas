@@ -26,9 +26,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                         }
                         break;
                     }
-                    case 'otheraction':
-                        dosomethingelse();
-                        break;
+                   
                 }
         }
 

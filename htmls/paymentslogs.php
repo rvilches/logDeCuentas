@@ -2,19 +2,6 @@
 include 'login.php';
 echo $_SESSION['login_user'];
 
-// $conn1=$_SESSION['conexion'];
-
-// $stmt1=$conn1->prepare("SELECT * FROM users WHERE username='rvil26'");
-// $stmt1->execute();
-// $userdb1= $stmt1->fetch();
-
-//     if(count($userdb1)>1)
-//     {
-//       echo 'Hola!';
-
-//     }
-
-
 ?>
 
 <!DOCTYPE html>
