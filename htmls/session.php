@@ -4,7 +4,7 @@ $user = "kindergame";
 $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
 //loginIndex.php connection to db
-
+echo "SESSION START";
 if($_SERVER["REQUEST_METHOD"]=="POST")
         {
             if (isset($_POST['action'])) 
