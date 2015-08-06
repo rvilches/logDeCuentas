@@ -20,7 +20,7 @@ if(isset($_POST['action']))
                 $username=$_POST['username'];
                 $password=$_POST['password'];
                 connectTodb($username,$passwod);
-                echo $username;
+                echo &password;
             }
             break;
         }
