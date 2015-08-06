@@ -7,28 +7,28 @@ $db = "lodDeCuentas_db";
 
 function formPostManager()
 {
-if(isset($_POST['action']))
-{
-    switch($_POST['action']) 
-    {
-        case 'login':
-        {
-            if(empty($_POST['username'])||empty($_POST['password']))
-            {
-                $error="Username or password is invalid";
-                echo "$error";
-            }
-            else
-            {
-                $username=$_POST['username'];
-                $password=$_POST['password'];
-                connectTodb($username,$passwod);
-            }
-            break;
-        }
-    }            
-}
-
+// if(isset($_POST['action']))
+// {
+//     switch($_POST['action']) 
+//     {
+//         case 'login':
+//         {
+//             if(empty($_POST['username'])||empty($_POST['password']))
+//             {
+//                 $error="Username or password is invalid";
+//                 echo "$error";
+//             }
+//             else
+//             {
+//                 $username=$_POST['username'];
+//                 $password=$_POST['password'];
+//                 connectTodb($username,$passwod);
+//             }
+//             break;
+//         }
+//     }            
+// }
+echo"HELLO";
 }
 
 function connectTodb($username,$password)
