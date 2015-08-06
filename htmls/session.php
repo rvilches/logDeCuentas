@@ -19,7 +19,7 @@ if(isset($_POST['action']))
             {
                 $username=$_POST['username'];
                 $password=$_POST['password'];
-                connectTodb($username,$passwod);
+                connectTodb($username,$password);
                
             }
             break;
