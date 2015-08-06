@@ -21,7 +21,7 @@ if(isset($_SESSION['login_user']))
 // 	// {
 // 	// 	$username=$_POST['username'];
 // 	// 	$password=$_POST['password'];
-// 		formPostManager();
+	formPostManager();
 // 	//}
 // }
 ?>
