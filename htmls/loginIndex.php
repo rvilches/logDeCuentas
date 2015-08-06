@@ -1,6 +1,6 @@
 <?php
 
-//include 'session.php';
+include 'session.php';
 if(isset($_SESSION['login_user']))
 {
 	header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
