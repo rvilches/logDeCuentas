@@ -32,36 +32,36 @@ if(isset($_POST['action']))
 
 }
 
-// function connectTodb($username,$password)
-// {
+function connectTodb($username,$password)
+{
 
-// try{
+try{
     
-//     $conn = new PDO( "sqlsrv:Server= global $server ; Database = global $db ",global $user,global $pwd);
-//     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-//     $_SESSION['conexion']=$conn;
-//     $stmt=$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
-//     $stmt->execute();
-//     $userdb= $stmt->fetch();
+    $conn = new PDO( "sqlsrv:Server= global $server ; Database = global $db ",global $user,global $pwd);
+    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+    $_SESSION['conexion']=$conn;
+    $stmt=$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
+    $stmt->execute();
+    $userdb= $stmt->fetch();
 
-//     if(count($userdb)>1)
-//     {
-//         $_SESSION['login_user']=$userdb['username'];
-//         header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
+    if(count($userdb)>1)
+    {
+        $_SESSION['login_user']=$userdb['username'];
+        header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
         
-//     }
-//     else
-//     {
-//         echo "sorry you are not an customer";
-//     }
+    }
+    else
+    {
+        echo "sorry you are not an customer";
+    }
 
 
-// }
-// catch(Exception $e)
-//     {
-//     die(print_r($e));
-//     }
-// }
+}
+catch(Exception $e)
+    {
+    die(print_r($e));
+    }
+}
 
 
 ?>
