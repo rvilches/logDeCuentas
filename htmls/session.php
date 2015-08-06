@@ -29,7 +29,7 @@ if(isset($_POST['action']))
 
 }
 
-function connectTodb(&$login,&$pass)
+function connectTodb($login,$pass)
 {
 $server = "tcp:cszcc1h0ac.database.windows.net,1433";
 $user = "kindergame";
