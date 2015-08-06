@@ -1,11 +1,8 @@
 <?php
-
-
 $server = "tcp:cszcc1h0ac.database.windows.net,1433";
 $user = "kindergame";
 $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
-//loginIndex.php connection to db
 
 
 function formPostManager()
@@ -15,6 +12,7 @@ if(isset($_POST['action']))
     switch($_POST['action']) 
     {
         case 'login':
+        {
             if(empty($_POST['username'])||empty($_POST['password']))
             {
                 $error="Username or password is invalid";
@@ -27,6 +25,7 @@ if(isset($_POST['action']))
                 connectTodb($username,$passwod);
             }
             break;
+        }
     }            
 }
 
