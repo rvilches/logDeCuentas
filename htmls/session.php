@@ -1,6 +1,6 @@
 <?php
 
-echo "HELLO WORLD";
+
 $server = "tcp:cszcc1h0ac.database.windows.net,1433";
 $user = "kindergame";
 $pwd = "baconPancakes#12345";
@@ -8,34 +8,32 @@ $db = "lodDeCuentas_db";
 //loginIndex.php connection to db
 
 
-
-if($_SERVER["REQUEST_METHOD"]=="POST")
-        {
-            switch($_POST['act']) 
-                {
-                    case 'login':
-                    
-                        if(empty($_POST['username'])||empty($_POST['password']))
-                        {
-                            $error="Username or password is invalid";
-                            echo "$error";
-                        }
-                        else
-                        {
-                            $username=$_POST['username'];
-                            $password=$_POST['password'];
-                            connectTodb();
-                        }
-                        break;
-                }            
-        }
-
-
-
-function connectTodb()
+function formPostManager()
 {
-global $username;
-global $password;
+
+    switch($_POST['action']) 
+    {
+        case 'login':
+            if(empty($_POST['username'])||empty($_POST['password']))
+            {
+                $error="Username or password is invalid";
+                echo "$error";
+            }
+            else
+            {
+                $username=$_POST['username'];
+                $password=$_POST['password'];
+                connectTodb($username,$passwod);
+            }
+            break;
+    }            
+        
+
+}
+
+function connectTodb($username,$password)
+{
+
 try{
     
     $conn = new PDO( "sqlsrv:Server= global $server ; Database = global $db ",global $user,global $pwd);

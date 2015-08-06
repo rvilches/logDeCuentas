@@ -6,24 +6,24 @@ if(isset($_SESSION['login_user']))
 	header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
 }
 //include 'login.php';
-// include 'session.php';
-// session_start();
-// $error='';
-// if($_SERVER["REQUEST_METHOD"]=="POST")
-// {
-// 	if(empty($_POST['username'])||empty($_POST['password']))
-// 	{
-// 		$error="Username or password is invalid";
-// 		echo "$error";
+ include 'session.php';
+session_start();
+$error='';
+if($_SERVER["REQUEST_METHOD"]=="POST")
+{
+	// if(empty($_POST['username'])||empty($_POST['password']))
+	// {
+	// 	$error="Username or password is invalid";
+	// 	echo "$error";
 
-// 	}
-// 	else
-// 	{
-// 		$username=$_POST['username'];
-// 		$password=$_POST['password'];
-// 		connectTodb();
-// 	}
-// }
+	// }
+	// else
+	// {
+	// 	$username=$_POST['username'];
+	// 	$password=$_POST['password'];
+		formPostManager();
+	//}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,8 +41,8 @@ if(isset($_SESSION['login_user']))
  	<h3>Login:</h3>
  	<article>
 
- 		<form action="htmls/session.php" method="post">
- 		<input type="hidden" name="act" value="login">
+ 		<form action=" " method="post">
+ 		<input type="hidden" name="action" value="login">
  		<span class="formusername">Username:</span>
  		<br><input id="username" type="text" name="username" placeholder="username" ><br>
  		<span class="formpassword">Password:</span>
