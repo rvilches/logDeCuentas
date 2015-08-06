@@ -1,8 +1,5 @@
 <?php
-$server = "tcp:cszcc1h0ac.database.windows.net,1433";
-$user = "kindergame";
-$pwd = "baconPancakes#12345";
-$db = "lodDeCuentas_db";
+
 
 
 function formPostManager()
@@ -32,15 +29,18 @@ if(isset($_POST['action']))
 
 }
 
-function connectTodb($username,$password)
+function connectTodb(&$login,&$pass)
 {
-
+$server = "tcp:cszcc1h0ac.database.windows.net,1433";
+$user = "kindergame";
+$pwd = "baconPancakes#12345";
+$db = "lodDeCuentas_db";
 try{
     
-    $conn = new PDO( "sqlsrv:Server= global $server ; Database = global $db ",global $user,global $pwd);
+    $conn = new PDO( "sqlsrv:Server= global $server ; Database = global $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $_SESSION['conexion']=$conn;
-    $stmt=$conn->prepare("SELECT * FROM users WHERE username='$username' AND password='$password'");
+    $stmt=$conn->prepare("SELECT * FROM users WHERE username='$login' AND password='$pass'");
     $stmt->execute();
     $userdb= $stmt->fetch();
 
