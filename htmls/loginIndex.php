@@ -5,25 +5,25 @@ if(isset($_SESSION['login_user']))
 {
 	header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
 }
-//include 'login.php';
+// //include 'login.php';
 
-session_start();
-$error='';
-if($_SERVER["REQUEST_METHOD"]=="POST")
-{
-	// if(empty($_POST['username'])||empty($_POST['password']))
-	// {
-	// 	$error="Username or password is invalid";
-	// 	echo "$error";
+// session_start();
+// $error='';
+// if($_SERVER["REQUEST_METHOD"]=="POST")
+// {
+// 	// if(empty($_POST['username'])||empty($_POST['password']))
+// 	// {
+// 	// 	$error="Username or password is invalid";
+// 	// 	echo "$error";
 
-	// }
-	// else
-	// {
-	// 	$username=$_POST['username'];
-	// 	$password=$_POST['password'];
-		formPostManager();
-	//}
-}
+// 	// }
+// 	// else
+// 	// {
+// 	// 	$username=$_POST['username'];
+// 	// 	$password=$_POST['password'];
+// 		formPostManager();
+// 	//}
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
