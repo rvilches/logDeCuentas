@@ -10,7 +10,8 @@ $db = "lodDeCuentas_db";
 
 function formPostManager()
 {
-
+if(isset($_POST['action']))
+{
     switch($_POST['action']) 
     {
         case 'login':
@@ -27,7 +28,7 @@ function formPostManager()
             }
             break;
     }            
-        
+}
 
 }
 

@@ -1,12 +1,12 @@
 <?php
 
-
+include 'session.php';
 if(isset($_SESSION['login_user']))
 {
 	header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
 }
 //include 'login.php';
-include 'session.php';
+
 session_start();
 $error='';
 if($_SERVER["REQUEST_METHOD"]=="POST")
