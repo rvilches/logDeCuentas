@@ -37,7 +37,7 @@ $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
 try{
     
-    $conn = new PDO( "sqlsrv:Server= global $server ; Database = global $db ", $user, $pwd);
+    $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $_SESSION['conexion']=$conn;
     $stmt=$conn->prepare("SELECT * FROM users WHERE username='$login' AND password='$pass'");
