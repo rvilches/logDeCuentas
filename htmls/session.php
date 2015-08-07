@@ -1,7 +1,5 @@
 <?php
 
-
-
 function formPostController()
 {
 if(isset($_POST['action']))
@@ -41,7 +39,6 @@ $server = "tcp:cszcc1h0ac.database.windows.net,1433";
 $user = "kindergame";
 $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
-echo "ESSSOOO . $pass . $login";
 try{
     
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
@@ -73,100 +70,100 @@ catch(Exception $e)
 }
 
 
-funtion signUpController()
-{
+// funtion signUpController()
+// {
     
-    $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
-    $firstnameBool=$lasnameBool=$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=FALSE;
-    $strPro = 'signUp';
+//     $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
+//     $firstnameBool=$lasnameBool=$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=FALSE;
+//     $strPro = 'signUp';
 
-            if (empty($_POST["firstname"])) 
-            {
-                $firstnameErr = "Name is required";
-            } 
-            else 
-            {
-                if (!preg_match("/^[a-zA-Z ]*$/",$firstname)) 
-                {
-                $firstnameErr = "Only letters and white space allowed"; 
-                }
-                else
-                {
-                $firstname = test_input($_POST["firstname"]);
-                $firstnameBool=TRUE;
-                }
-            }
+//             if (empty($_POST["firstname"])) 
+//             {
+//                 $firstnameErr = "Name is required";
+//             } 
+//             else 
+//             {
+//                 if (!preg_match("/^[a-zA-Z ]*$/",$firstname)) 
+//                 {
+//                 $firstnameErr = "Only letters and white space allowed"; 
+//                 }
+//                 else
+//                 {
+//                 $firstname = test_input($_POST["firstname"]);
+//                 $firstnameBool=TRUE;
+//                 }
+//             }
 
-            if (empty($_POST["email"])) 
-            {
-                $emailErr = "Email is required";
-            } 
-            else 
-            {
-                $email = test_input($_POST["email"]);
-                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
-                {
-                $emailErr = "Invalid email format"; 
-                }
-                else
-                {
-                $emailBool=TRUE;
-                }
+//             if (empty($_POST["email"])) 
+//             {
+//                 $emailErr = "Email is required";
+//             } 
+//             else 
+//             {
+//                 $email = test_input($_POST["email"]);
+//                 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
+//                 {
+//                 $emailErr = "Invalid email format"; 
+//                 }
+//                 else
+//                 {
+//                 $emailBool=TRUE;
+//                 }
                             
-            }
-            if (empty($_POST["lastname"])) 
-            {
-                $lastnameErr = "Lastname is required";
-            } 
-            else 
-            {
-                if (!preg_match("/^[a-zA-Z ]*$/",$lastname)) 
-                {
-                $lastnameErr = "Only letters and white space allowed"; 
-                }
-                else
-                {
-                $lastnameBool=TRUE;
-                $lastname= test_input($_POST["lastname"]);
-                }
+//             }
+//             if (empty($_POST["lastname"])) 
+//             {
+//                 $lastnameErr = "Lastname is required";
+//             } 
+//             else 
+//             {
+//                 if (!preg_match("/^[a-zA-Z ]*$/",$lastname)) 
+//                 {
+//                 $lastnameErr = "Only letters and white space allowed"; 
+//                 }
+//                 else
+//                 {
+//                 $lastnameBool=TRUE;
+//                 $lastname= test_input($_POST["lastname"]);
+//                 }
             
-            }
-            if (empty($_POST["password"])) 
-            {
-                $passwordErr = "Password is required";
-            } 
-            else 
-            {
-            $passwordBool=TRUE;
-            $password = test_input($_POST["password"]);
-            }
-            if (empty($_POST["username"])) 
-            {
-                $usernameErr = "username is Required";
-            } 
-            else 
-            {
-            $usernameBool=TRUE;
-            $username = test_input($_POST["username"]);
-            }
+//             }
+//             if (empty($_POST["password"])) 
+//             {
+//                 $passwordErr = "Password is required";
+//             } 
+//             else 
+//             {
+//             $passwordBool=TRUE;
+//             $password = test_input($_POST["password"]);
+//             }
+//             if (empty($_POST["username"])) 
+//             {
+//                 $usernameErr = "username is Required";
+//             } 
+//             else 
+//             {
+//             $usernameBool=TRUE;
+//             $username = test_input($_POST["username"]);
+//             }
 
-    $secondlastnameBool=TRUE;
-    $secondlastname = test_input($_POST["secondLastname"]);
-     if($firstnameBool==TRUE and $lastnameBool==TRUE and $secondlastnameBool==TRUE and $emailBool==TRUE and $passwordBool==TRUE
-    and $usernameBool==TRUE)
+//     $secondlastnameBool=TRUE;
+//     $secondlastname = test_input($_POST["secondLastname"]);
+//      if($firstnameBool==TRUE and $lastnameBool==TRUE and $secondlastnameBool==TRUE and $emailBool==TRUE and $passwordBool==TRUE
+//     and $usernameBool==TRUE)
   
-    {
-    connectToDb($firstname,$password,$strPro);
-    }
+//     {
+//     connectToDb($firstname,$password,$strPro);
+//     }
    
-}
+// }
 
 
-function test_input($data) 
-{
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
+// function test_input($data) 
+// {
+//   $data = trim($data);
+//   $data = stripslashes($data);
+//   $data = htmlspecialchars($data);
+//   return $data;
+// }
 ?>
