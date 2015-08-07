@@ -44,8 +44,7 @@ try{
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $_SESSION['conexion']=$conn;
-    if(strcmp('login',$strPro))
-    {
+    
     $stmt=$conn->prepare("SELECT * FROM users WHERE username='$login' AND password='$pass'");
     $stmt->execute();
     $userdb= $stmt->fetch();
@@ -60,7 +59,7 @@ try{
     {
         echo "sorry you are not an customer";
     }
-    }
+    
 
 }
 catch(Exception $e)
