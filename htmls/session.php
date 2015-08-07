@@ -18,7 +18,7 @@ if(isset($_POST['action']))
                 $username=$_POST['username'];
                 $password=$_POST['password'];
                 $strPro = 'login';
-                connectTodb($username,$password,$strPro);
+                connectTodb($username,$password);
                
             }
             break;
@@ -33,7 +33,7 @@ if(isset($_POST['action']))
 
 }
 
-function connectTodb($login,$pass,$strPro)
+function connectTodb($login,$pass)
 {
 $server = "tcp:cszcc1h0ac.database.windows.net,1433";
 $user = "kindergame";
