@@ -17,7 +17,7 @@ if(isset($_POST['action']))
             {
                 $username=$_POST['username'];
                 $password=$_POST['password'];
-                $strPro = 'login';
+               
                 connectTodb($username,$password);
                
             }
