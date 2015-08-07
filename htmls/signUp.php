@@ -6,13 +6,13 @@
 </head>
 <body>
 <?php
-include 'session.php';
-	 $firstname=$lastname=$secondlastname=$username=$password=$email="";
+// include 'session.php';
+// 	 $firstname=$lastname=$secondlastname=$username=$password=$email="";
 	 
-	 if($_SERVER["REQUEST_METHOD"]=="POST")
-	 	{
-      formPostController();
-    }
+// 	 if($_SERVER["REQUEST_METHOD"]=="POST")
+// 	 	{
+//       formPostController();
+//     }
 
 // function test_input($data) {
 //   $data = trim($data);
@@ -30,9 +30,9 @@ include 'session.php';
 	
 // 	try{
 	
-//     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
+//     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd); 
 //     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    
+     
 //     $sql ="INSERT INTO users (firstName, lastName, secondLastName, email, password, username) VALUES 
 //   		('$firstname', '$lastname', '$secondlastname', '$email', '$password', '$username')";
 //   		$conn->exec($sql);
