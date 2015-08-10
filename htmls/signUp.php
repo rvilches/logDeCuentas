@@ -48,7 +48,7 @@ $emailErr = "JUANN";
 	<h2 id="bodyh2">Sign Up</h2>
 	<section>
 		<form id = "userForm" method="post" action="" >
-		<input type="hidden" name="controller" value="signUpController">
+		<input type="hidden" id='controller' name="controller" value="signUpController">
 		First Name:
 		<br><input type="text" id="firstname" name="firstname" placeholder="firstname" value="<?php echo $firstname;?>" autofocus ="autofocus"><span class="error">* <?php echo $firstnameErr;?></span><br><hr>
 		Lastname:
