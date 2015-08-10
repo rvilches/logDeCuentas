@@ -72,12 +72,12 @@ catch(Exception $e)
     }
 }
 
-funtion signUpControllerManager()
+function signUpControllerManager()
  {
     
      $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
      $firstnameBool=$lasnameBool=$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=FALSE;
-     $strPro = 'signUp';
+     $controller = $_POST['controller'];
 
              if (empty($_POST["firstname"])) 
              {
