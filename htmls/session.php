@@ -77,7 +77,7 @@ function signUpControllerManager()
     $domi = new DomDocument;
     $domi->validateOnParse = true;
     $domi->Load('signUp.php');
-    echo $domi->getElementById('firstname')->value;
+    echo "Souja".$domi->getElementById('firstname')->value."\n";
 
      $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
      $firstnameBool=$lasnameBool=$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=FALSE;
