@@ -18,7 +18,7 @@ if(isset($_POST['action']))
                 $username=$_POST['username'];
                 $password=$_POST['password'];
                 connectTodb($username,$password);
-               
+                echo "something";
             }
             break;
         }
@@ -30,6 +30,7 @@ if(isset($_POST['action']))
 
 function connectTodb($login,$pass)
 {
+    echo "something 2";
 $server = "tcp:cszcc1h0ac.database.windows.net,1433";
 $user = "kindergame";
 $pwd = "baconPancakes#12345";
