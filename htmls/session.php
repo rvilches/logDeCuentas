@@ -2,6 +2,8 @@
 
 function formPostController()
 {
+if(isset($_POST['action']))
+{
     switch($_POST['action']) 
     {
         case 'login':
