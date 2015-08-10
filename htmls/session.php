@@ -1,7 +1,5 @@
 <?php
-$firstname=$lastname=$secondlastname=$username=$password=$email="";
-$firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
-$firstnameBool=$lasnameBool=$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=FALSE;
+
 function formPostController()
 {
 if(isset($_POST['controller']))
@@ -27,9 +25,9 @@ if(isset($_POST['controller']))
         }
         case 'signUpController':
         {
-            signUpControllerManager();
-            $controller = $_POST['controller'];
-            
+
+           signUpControllerManager();
+            echo "calling sign up controller";
             break;
         }
         default:
@@ -78,86 +76,87 @@ catch(Exception $e)
 function signUpControllerManager()
  {
     
-     
+     $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
+     $firstnameBool=$lasnameBool=$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=FALSE;
      $controller = $_POST['controller'];
 
              if (empty($_POST["firstname"])) 
              {
-                 global $firstnameErr = "Name is required";
+                 $firstnameErr = "Name is required";
              } 
              else 
              {
                  if (!preg_match("/^[a-zA-Z ]*$/",$firstname)) 
                  {
-                 global $firstnameErr = "Only letters and white space allowed"; 
+                 $firstnameErr = "Only letters and white space allowed"; 
                  }
                  else
                  {
-                 global $firstname = test_input($_POST["firstname"]);
-                 global $firstnameBool=TRUE;
+                 $firstname = test_input($_POST["firstname"]);
+                 $firstnameBool=TRUE;
                  }
              }
 
              if (empty($_POST["email"])) 
              {
-                 global $emailErr = "Email is required";
+                 $emailErr = "Email is required";
              } 
              else 
              {
-                 global $email = test_input($_POST["email"]);
+                 $email = test_input($_POST["email"]);
                  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
                  {
-                 global $emailErr = "Invalid email format"; 
+                 $emailErr = "Invalid email format"; 
                  }
                  else
                  {
-                 global $emailBool=TRUE;
+                 $emailBool=TRUE;
                  }
                             
              }
              if (empty($_POST["lastname"])) 
              {
-                 global $lastnameErr = "Lastname is required";
+                 $lastnameErr = "Lastname is required";
              } 
              else 
              {
                  if (!preg_match("/^[a-zA-Z ]*$/",$lastname)) 
                  {
-                 global $lastnameErr = "Only letters and white space allowed"; 
+                 $lastnameErr = "Only letters and white space allowed"; 
                  }
                  else
                  {
-                 global $lastnameBool=TRUE;
-                 global $lastname= test_input($_POST["lastname"]);
+                 $lastnameBool=TRUE;
+                 $lastname= test_input($_POST["lastname"]);
                  }
             
              }
              if (empty($_POST["password"])) 
              {
-                 global $passwordErr = "Password is required";
+                 $passwordErr = "Password is required";
              } 
              else 
              {
-             global $passwordBool=TRUE;
-             global $password = test_input($_POST["password"]);
+             $passwordBool=TRUE;
+             $password = test_input($_POST["password"]);
              }
              if (empty($_POST["username"])) 
              {
-                 global $usernameErr = "username is Required";
+                 $usernameErr = "username is Required";
              } 
              else 
              {
-             global $usernameBool=TRUE;
-             global $username = test_input($_POST["username"]);
+             $usernameBool=TRUE;
+             $username = test_input($_POST["username"]);
              }
 
-     global $secondlastnameBool=TRUE;
-     global $secondlastname = test_input($_POST["secondLastname"]);
-      if(global $firstnameBool==TRUE and global $lastnameBool==TRUE and global $secondlastnameBool==TRUE and global $emailBool==TRUE and global $passwordBool==TRUE
-     and global $usernameBool==TRUE)
+     $secondlastnameBool=TRUE;
+     $secondlastname = test_input($_POST["secondLastname"]);
+      if($firstnameBool==TRUE and $lastnameBool==TRUE and $secondlastnameBool==TRUE and $emailBool==TRUE and $passwordBool==TRUE
+     and $usernameBool==TRUE)
   
      {
-     connectToDb(global $firstname,global $password,$controller);
+     connectToDb($firstname,$password,$controller);
      }
    
  }
