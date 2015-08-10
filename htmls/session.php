@@ -2,9 +2,9 @@
 
 function formPostController()
 {
-if(isset($_POST['action']))
+if(isset($_POST['act']))
 {
-    switch($_POST['action']) 
+    switch($_POST['act']) 
     {
         case 'login':
         {
