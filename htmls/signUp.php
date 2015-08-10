@@ -6,13 +6,13 @@
 </head>
 <body>
 <?php
-// include 'session.php';
-// 	 $firstname=$lastname=$secondlastname=$username=$password=$email="";
+include 'session.php';
+	 $firstname=$lastname=$secondlastname=$username=$password=$email="";
 	 
-// 	 if($_SERVER["REQUEST_METHOD"]=="POST")
-// 	 	{
-//       formPostController();
-//     }
+	 if($_SERVER["REQUEST_METHOD"]=="POST")
+	 	{
+      formPostController();
+    }
 
 // function test_input($data) {
 //   $data = trim($data);
@@ -54,7 +54,7 @@
 	<h2 id="bodyh2">Sign Up</h2>
 	<section>
 		<form id = "userForm" method="post" action="" >
-		<input type="hidden" name="action" value="signUp">
+		<input type="hidden" name="controller" value="signUp">
 		First Name:
 		<br><input type="text" name="firstname" placeholder="firstname" value="<?php echo $firstname;?>" autofocus ="autofocus"><span class="error">* <?php echo $firstnameErr;?></span><br><hr>
 		Lastname:

@@ -22,6 +22,11 @@ if(isset($_POST['controller']))
             }
             break;
         }
+        case 'signUp':
+        {
+            echo "calling sign up controller";
+            break;
+        }
         default:
         echo "error on controller chooser";
         
