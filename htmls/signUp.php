@@ -7,7 +7,7 @@
 <body>
 <?php
 include 'session.php';
-	 $firstname=$lastname=$secondlastname=$username=$password=$email="";
+	// $firstname=$lastname=$secondlastname=$username=$password=$email="";
 	 
 	 if($_SERVER["REQUEST_METHOD"]=="POST")
 	 	{
