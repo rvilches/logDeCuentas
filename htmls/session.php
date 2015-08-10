@@ -27,7 +27,6 @@ if(isset($_POST['controller']))
         {
 
            signUpControllerManager();
-            echo "calling sign up controller";
             break;
         }
         default:

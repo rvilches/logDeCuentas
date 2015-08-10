@@ -7,7 +7,7 @@
 <body>
 <?php
 include 'session.php';
-	 //
+$emailErr = "JUANN";
 	 
 	 if($_SERVER["REQUEST_METHOD"]=="POST")
 	 	{
