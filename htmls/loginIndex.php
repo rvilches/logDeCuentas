@@ -28,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
  	<article>
 
  		<form action="" method="post">
- 		<input type="hidden" name="act" value="login">
+ 		<input type="hidden" name="controller" value="login">
  		<span class="formusername">Username:</span>
  		<br><input id="username" type="text" name="username" placeholder="username" ><br>
  		<span class="formpassword">Password:</span>

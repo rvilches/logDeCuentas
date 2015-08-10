@@ -2,9 +2,9 @@
 
 function formPostController()
 {
-if(isset($_POST['act']))
+if(isset($_POST['controller']))
 {
-    switch($_POST['act']) 
+    switch($_POST['controller']) 
     {
         case 'login':
         {
@@ -18,12 +18,12 @@ if(isset($_POST['act']))
                 $username=$_POST['username'];
                 $password=$_POST['password'];
                 connectTodb($username,$password);
-                echo "something";
+                
             }
             break;
         }
         default:
-        echo "errorr";
+        echo "error on controller chooser";
         
     }            
 }
@@ -32,7 +32,7 @@ if(isset($_POST['act']))
 
 function connectTodb($login,$pass)
 {
-    echo "something 2";
+    
 $server = "tcp:cszcc1h0ac.database.windows.net,1433";
 $user = "kindergame";
 $pwd = "baconPancakes#12345";
