@@ -11,6 +11,7 @@ if(isset($_POST['controller']))
             if(empty($_POST['username'])||empty($_POST['password']))
             {
                 $error="Invalid username or password";
+                echo $error;
             }
             else
             {
