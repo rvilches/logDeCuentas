@@ -75,8 +75,9 @@ catch(Exception $e)
 function signUpControllerManager()
  {
     $domi = new DomDocument;
-    $domi->load('signUp.php');
-    echo $domi->getElementsById('firstname')->value;
+    $domi->validateOnParse = true;
+    $domi->Load('signUp.php');
+    echo $domi->getElementById('firstname')->value;
 
      $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
      $firstnameBool=$lasnameBool=$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=FALSE;
