@@ -74,7 +74,7 @@ catch(Exception $e)
 
 function signUpControllerManager()
  {
-    
+    echo "something";
      $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
      $firstnameBool=$lasnameBool=$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=FALSE;
      $controller = $_POST['controller'];
