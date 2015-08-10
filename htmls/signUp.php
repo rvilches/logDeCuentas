@@ -61,7 +61,7 @@ include 'session.php';
 		<br><input type="password" name="password" placeholder="password" value="<?php echo $password;?>"><span class="error">* <?php echo $passwordErr;?></span><br><hr>
 		
 		email:
-		<br><input type="text" name="email" placeholder="email" value="<?php echo $email;?>" ><span class="error"> <?= global $emailErr?></span><br><hr>
+		<br><input type="text" name="email" placeholder="email" value="<?php echo $email;?>" ><span class="error"> <?php global $emailErr;?></span><br><hr>
 
 		<input id="submit" type="submit" name="submit" value="create account">
 
