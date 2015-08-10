@@ -22,6 +22,8 @@ if(isset($_POST['action']))
             }
             break;
         }
+        default:
+        echo "errorr";
         
     }            
 }
