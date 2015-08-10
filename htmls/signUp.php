@@ -50,7 +50,7 @@ $emailErr = "JUANN";
 		<form id = "userForm" method="post" action="" >
 		<input type="hidden" name="controller" value="signUpController">
 		First Name:
-		<br><input type="text" name="firstname" placeholder="firstname" value="<?php echo $firstname;?>" autofocus ="autofocus"><span class="error">* <?php echo $firstnameErr;?></span><br><hr>
+		<br><input type="text" id="firstname" name="firstname" placeholder="firstname" value="JODER" autofocus ="autofocus"><span class="error">* <?php echo $firstnameErr;?></span><br><hr>
 		Lastname:
 		<br><input type="text" name="lastname" placeholder="lastname" value="<?php echo $lastname;?>"><span class="error">* <?php echo $lastnameErr;?></span><br><hr>
 		Second Lastname:
@@ -59,7 +59,6 @@ $emailErr = "JUANN";
 		<br><input type="text" name="username" placeholder="username" value="<?php echo $username;?>"><span class="error">* <?php echo $usernameErr;?></span><br><hr>
 		Password:
 		<br><input type="password" name="password" placeholder="password" value="<?php echo $password;?>"><span class="error">* <?php echo $passwordErr;?></span><br><hr>
-		
 		email:
 		<br><input type="text" name="email" placeholder="email" value="<?php echo $email;?>" ><span class="error"> <?php $emailErr;?></span><br><hr>
 
