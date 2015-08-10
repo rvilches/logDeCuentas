@@ -10,8 +10,7 @@ if(isset($_POST['controller']))
         {
             if(empty($_POST['username'])||empty($_POST['password']))
             {
-                $error="Username or password is invalid";
-                echo "$error";
+                $error="Invalid username or password";
             }
             else
             {
@@ -54,7 +53,7 @@ try{
     }
     else
     {
-        echo "sorry you are not an customer";
+        echo "Invalid username or password";
     }
     
 
