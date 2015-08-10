@@ -50,7 +50,7 @@ $emailErr = "JUANN";
 		<form id = "userForm" method="post" action="" >
 		<input type="hidden" name="controller" value="signUpController">
 		First Name:
-		<br><input type="text" id="firstname" name="firstname" placeholder="firstname" value="JODER" autofocus ="autofocus"><span class="error">* <?php echo $firstnameErr;?></span><br><hr>
+		<br><input type="text" id="firstname" name="firstname" placeholder="firstname" value="<?php echo $firstname;?>" autofocus ="autofocus"><span class="error">* <?php echo $firstnameErr;?></span><br><hr>
 		Lastname:
 		<br><input type="text" name="lastname" placeholder="lastname" value="<?php echo $lastname;?>"><span class="error">* <?php echo $lastnameErr;?></span><br><hr>
 		Second Lastname:
