@@ -6,7 +6,7 @@ if(isset($_POST['controller']))
 {
     switch($_POST['controller']) 
     {
-        case 'login':
+        case 'loginController':
         {
             if(empty($_POST['username'])||empty($_POST['password']))
             {
@@ -17,13 +17,15 @@ if(isset($_POST['controller']))
             {
                 $username=$_POST['username'];
                 $password=$_POST['password'];
-                connectTodb($username,$password);
+                $controller = $_POST['controller'];
+                connectTodb($username,$password,$controller);
                 
             }
             break;
         }
-        case 'signUp':
+        case 'signUpController':
         {
+            $controller = $_POST['controller'];
             echo "calling sign up controller";
             break;
         }
@@ -35,7 +37,7 @@ if(isset($_POST['controller']))
 
 }
 
-function connectTodb($login,$pass)
+function connectTodb($login,$pass,$controller)
 {
     
 $server = "tcp:cszcc1h0ac.database.windows.net,1433";
