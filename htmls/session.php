@@ -25,8 +25,9 @@ if(isset($_POST['controller']))
         }
         case 'signUpController':
         {
+            signUpControllerManager()
             $controller = $_POST['controller'];
-            echo "calling sign up controller";
+            
             break;
         }
         default:
