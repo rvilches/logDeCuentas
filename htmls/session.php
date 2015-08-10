@@ -25,7 +25,7 @@ if(isset($_POST['controller']))
         }
         case 'signUpController':
         {
-            signUpControllerManager()
+            signUpControllerManager();
             $controller = $_POST['controller'];
             
             break;
