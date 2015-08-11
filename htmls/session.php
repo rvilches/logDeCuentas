@@ -51,7 +51,7 @@ switch($_POST['controller'])
         {
         try{
     
-         $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
+            $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
             $_SESSION['conexion']=$conn;
             $stmt=$conn->prepare("SELECT * FROM users WHERE username='$login' AND password='$pass'");
@@ -68,17 +68,16 @@ switch($_POST['controller'])
             {
              $GLOBALS['loginErr']="Invalid username or password";
             }
+           
+            }
+    
+        catch(Exception $e)
+            {
+            die(print_r($e));
+            }
             break;
         }
-    }
-catch(Exception $e)
-    {
-    die(print_r($e));
-    }
 }
-
-else
-{}
 }
 function signUpControllerManager()
  {
