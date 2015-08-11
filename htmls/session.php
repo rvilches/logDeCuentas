@@ -48,24 +48,22 @@ try{
     
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    $_SESSION['conexion']=$conn;
-    $stmt=$conn->prepare("SELECT * FROM users WHERE username='$login' AND password='$pass'");
-    $stmt->execute();
-    $userdb= $stmt->fetch();
+    if($controller=='loginController')
+        {
+            $stmt=$conn->prepare("SELECT * FROM users WHERE username='$login' AND password='$pass'");
+            $stmt->execute();
+            $userdb= $stmt->fetch();
 
-    if(count($userdb)>1)
-    {
-        $_SESSION['login_user']=$userdb['username'];
-        header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
-        
-    }
-    else
-    {
-        $GLOBALS['loginErr']="Invalid username or password";
-    }
-    
-
-    }
+            if(count($userdb)>1)
+            {
+                $_SESSION['login_user']=$userdb['username'];
+                header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
+            }
+            else
+            {
+                $GLOBALS['loginErr']="Invalid username or password";
+            }
+        }
 catch(Exception $e)
     {
     die(print_r($e));
