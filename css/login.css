@@ -109,6 +109,8 @@ section article
 #loginErr
 {
 	color:red;
-	display: none;
+	display: inline;
+	font-size: 3px;
+	
 }
 
