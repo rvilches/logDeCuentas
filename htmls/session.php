@@ -10,8 +10,7 @@ if(isset($_POST['controller']))
         {
             if(empty($_POST['username'])||empty($_POST['password']))
             {
-                $GLOBALS['loginErr']="Invalid username or password";
-                
+                $GLOBALS['loginErr']="Invalid username or password";   
             }
             else
             {
@@ -61,7 +60,7 @@ try{
     }
     else
     {
-        echo "Invalid username or password";
+        $GLOBALS['loginErr']="Invalid username or password";
     }
     
 
