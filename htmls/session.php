@@ -2,6 +2,7 @@
 
 function formPostController()
 {
+    $GLOBALS['loginErr']="";
 if(isset($_POST['controller']))
 {
     switch($_POST['controller']) 

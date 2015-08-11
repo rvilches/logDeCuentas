@@ -36,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
  		<input type="submit" name="submit" value="Login"><br> 
 		</form>
  	</article>
- 	<p id = "loginErr">* Invalid username/password</p>
+ 	<p id = "loginErr"><?php include 'session.php';echo $loginErr;?></p>
  </section>
  <script type="text/javascript" src="login.js"></script>
 </body>
