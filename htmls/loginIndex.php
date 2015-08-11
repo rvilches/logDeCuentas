@@ -37,8 +37,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
  		
 		</form>
 
- 				
-
  	</article>
  </section>
  <script type="text/javascript" src="login.js"></script>
