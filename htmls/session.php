@@ -75,7 +75,7 @@ catch(Exception $e)
 function signUpControllerManager()
  {
 
-     $GLOBALS['firstnameErr']=$GLOBALS['lastnameErr']=$GLOBALS['secondlastnameErr']=$GLOBALS['$usernameErr']=$GLOBALS['$passwordErr']=$GLOBALS['emailErr']="3";
+     $GLOBALS['firstnameErr']=$GLOBALS['lastnameErr']=$GLOBALS['secondlastnameErr']=$GLOBALS['$usernameErr']=$GLOBALS['$passwordErr']=$GLOBALS['emailErr']="";
      $firstnameBool=$lasnameBool=$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=FALSE;
      $controller = $_POST['controller'];
 
