@@ -152,7 +152,7 @@ function signUpControllerManager()
      and $usernameBool==TRUE)
   
      {
-     connectToDb($firstname,$password,$controller);
+     connectToDb($firstname,$password);
      }
    
  }
