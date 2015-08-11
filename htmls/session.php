@@ -17,8 +17,7 @@ if(isset($_POST['controller']))
             {
                 $username=$_POST['username'];
                 $password=$_POST['password'];
-                $controller = $_POST['controller'];
-                connectTodb($username,$password,$controller);
+                connectTodb($username,$password);
                 
             }
             break;
@@ -37,7 +36,7 @@ if(isset($_POST['controller']))
 
 }
 
-function connectTodb($login,$pass,$controller)
+function connectTodb($login,$pass)
 {
     
 $server = "tcp:cszcc1h0ac.database.windows.net,1433";
@@ -48,7 +47,7 @@ try{
     
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    if($controller=='loginController')
+    if(strcmp($_POST['controlller'], 'loginController')==true)
         {
             $stmt=$conn->prepare("SELECT * FROM users WHERE username='$login' AND password='$pass'");
             $stmt->execute();
@@ -63,7 +62,7 @@ try{
             {
                 $GLOBALS['loginErr']="Invalid username or password";
             }
-        }
+         }
 catch(Exception $e)
     {
     die(print_r($e));
