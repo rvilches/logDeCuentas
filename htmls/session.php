@@ -87,7 +87,7 @@ function signUpControllerManager()
              {
                  if (!preg_match("/^[a-zA-Z ]*$/",$firstname)) 
                  {
-                 $firstnameErr = "Only letters and white space allowed"; 
+                 $GLOBALS['firstnameErr'] = "Only letters and white space allowed"; 
                  }
                  else
                  {
@@ -98,14 +98,14 @@ function signUpControllerManager()
 
              if (empty($_POST["email"])) 
              {
-                 $emailErr = "Email is required";
+                $GLOBALS['emailErr'] = "Email is required";
              } 
              else 
              {
                  $email = test_input($_POST["email"]);
                  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
                  {
-                 $emailErr = "Invalid email format"; 
+                 $GLOBALS['emailErr'] = "Invalid email format"; 
                  }
                  else
                  {
@@ -115,13 +115,13 @@ function signUpControllerManager()
              }
              if (empty($_POST["lastname"])) 
              {
-                 $lastnameErr = "Lastname is required";
+                 $GLOBALS['lastnameErr'] = "Lastname is required";
              } 
              else 
              {
                  if (!preg_match("/^[a-zA-Z ]*$/",$lastname)) 
                  {
-                 $lastnameErr = "Only letters and white space allowed"; 
+                 $GLOBALS['lastnameErr'] = "Only letters and white space allowed"; 
                  }
                  else
                  {
@@ -132,7 +132,7 @@ function signUpControllerManager()
              }
              if (empty($_POST["password"])) 
              {
-                 $passwordErr = "Password is required";
+                $GLOBALS['$passwordErr'] = "Password is required";
              } 
              else 
              {
@@ -141,7 +141,7 @@ function signUpControllerManager()
              }
              if (empty($_POST["username"])) 
              {
-                 $usernameErr = "username is Required";
+                $GLOBALS['$usernameErr'] = "username is Required";
              } 
              else 
              {
