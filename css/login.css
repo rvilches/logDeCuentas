@@ -108,7 +108,8 @@ section article
 
 #loginErr
 {
-	color:#A80000;
+	color:black;
+	font-weight: bold;
 	display: inline;
 	font-size: 15px;
 	margin-left: 150px;
