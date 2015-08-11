@@ -44,6 +44,8 @@ $server = "tcp:cszcc1h0ac.database.windows.net,1433";
 $user = "kindergame";
 $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
+if($controller == "loginController")
+{
 try{
     
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
@@ -71,6 +73,9 @@ catch(Exception $e)
     die(print_r($e));
     }
 }
+}
+else
+{}
 
 function signUpControllerManager()
  {
