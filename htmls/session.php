@@ -39,44 +39,47 @@ if(isset($_POST['controller']))
 
 function connectTodb($login,$pass,$controller)
 {
-    $consonante="loginController";   
-if(strcmp($controller, $consonante)==0)
-{
-try{
-    $server = "tcp:cszcc1h0ac.database.windows.net,1433";
-    $user = "kindergame";
-    $pwd = "baconPancakes#12345";
-    $db = "lodDeCuentas_db";
- 
-    $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
-    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    $_SESSION['conexion']=$conn;
-    $stmt=$conn->prepare("SELECT * FROM users WHERE username='$login' AND password='$pass'");
-    $stmt->execute();
-    $userdb= $stmt->fetch();
-
-    if(count($userdb)>1)
-    {
-        $_SESSION['login_user']=$userdb['username'];
-        header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
-        
-    }
-    else
-    {
-        $GLOBALS['loginErr']="Invalid username or password";
-    }
     
+$server = "tcp:cszcc1h0ac.database.windows.net,1433";
+$user = "kindergame";
+$pwd = "baconPancakes#12345";
+$db = "lodDeCuentas_db";
+$consonante="loginController";
+switch($_POST['controller'])
+{
+    case 'loginController':
+        {
+        try{
+    
+         $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
+            $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+            $_SESSION['conexion']=$conn;
+            $stmt=$conn->prepare("SELECT * FROM users WHERE username='$login' AND password='$pass'");
+            $stmt->execute();
+            $userdb= $stmt->fetch();
 
+            if(count($userdb)>1)
+            {
+             $_SESSION['login_user']=$userdb['username'];
+                header('Location: http://logdecuentas.azurewebsites.net/htmls/paymentslogs.php');
+        
+            }
+            else
+            {
+             $GLOBALS['loginErr']="Invalid username or password";
+            }
+            break;
+        }
     }
 catch(Exception $e)
     {
     die(print_r($e));
     }
 }
-}
+
 else
 {}
-
+}
 function signUpControllerManager()
  {
 
