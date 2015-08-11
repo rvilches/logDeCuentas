@@ -47,7 +47,7 @@ try{
     
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    if(strcmp($_POST['controlller'], 'loginController')==true)
+    if($_POST['controlller']=="loginController")
         {
             $stmt=$conn->prepare("SELECT * FROM users WHERE username='$login' AND password='$pass'");
             $stmt->execute();
