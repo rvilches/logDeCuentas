@@ -1,5 +1,5 @@
 <?php
-
+$firstname= ROGELIO;
 function formPostController()
 {
 if(isset($_POST['controller']))
