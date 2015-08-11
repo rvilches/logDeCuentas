@@ -80,6 +80,19 @@ switch($controller)
          case 'signUpController':
          {
 
+            try{
+    
+            $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
+            $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+            $stmt=$conn->exec(signUpToLogDeCuentas @firstName=$_POST["firstname"], @lastname=$_POST["lastname"], 
+                @secondLastname=$_POST["secondLastname"], @email=$_POST["email"]), @password=$_POST["password"],@username= $_POST["username"]);
+                }
+    
+        catch(Exception $e)
+            {
+            die(print_r($e));
+            }
+            break;
          }
 }
 }
