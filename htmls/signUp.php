@@ -52,15 +52,15 @@ $emailErr = "JUANN";
 		First Name:
 		<br><input type="text" id="firstname" name="firstname" placeholder="firstname" value="<?php echo $_POST['firstname'];?>" autofocus ="autofocus"><span class="error">* <?php echo $firstnameErr;?></span><br><hr>
 		Lastname:
-		<br><input type="text" name="lastname" placeholder="lastname" value="<?php echo $lastname;?>"><span class="error">* <?php echo $lastnameErr;?></span><br><hr>
+		<br><input type="text" name="lastname" placeholder="lastname" value="<?php echo $_POST['lastname'];?>"><span class="error">* <?php echo $lastnameErr;?></span><br><hr>
 		Second Lastname:
-		<br><input type="text" name="secondLastname" placeholder="secondlastname" value="<?php echo $secondlastname;?>"><br><hr>
+		<br><input type="text" name="secondLastname" placeholder="secondlastname" value="<?php echo $_POST['secondlastname'];?>"><br><hr>
 		Username:
-		<br><input type="text" name="username" placeholder="username" value="<?php echo $username;?>"><span class="error">* <?php echo $usernameErr;?></span><br><hr>
+		<br><input type="text" name="username" placeholder="username" value="<?php echo $_POST['username'];?>"><span class="error">* <?php echo $usernameErr;?></span><br><hr>
 		Password:
-		<br><input type="password" name="password" placeholder="password" value="<?php echo $password;?>"><span class="error">* <?php echo $passwordErr;?></span><br><hr>
+		<br><input type="password" name="password" placeholder="password" value="<?php echo $_POST['password'];?>"><span class="error">* <?php echo $passwordErr;?></span><br><hr>
 		email:
-		<br><input type="text" name="email" placeholder="email" value="<?php echo $email;?>" ><span class="error"> <?php $emailErr;?></span><br><hr>
+		<br><input type="text" name="email" placeholder="email" value="<?php echo $_POST['email'];?>" ><span class="error"> <?php $emailErr;?></span><br><hr>
 
 		<input id="submit" type="submit" name="submit" value="create account">
 
