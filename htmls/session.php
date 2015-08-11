@@ -39,15 +39,15 @@ if(isset($_POST['controller']))
 
 function connectTodb($login,$pass,$controller)
 {
-    
-$server = "tcp:cszcc1h0ac.database.windows.net,1433";
-$user = "kindergame";
-$pwd = "baconPancakes#12345";
-$db = "lodDeCuentas_db";
-if($controller == "loginController")
+    $consonante="loginController";   
+if(strcmp($controller, $consonante)==0)
 {
 try{
-    
+    $server = "tcp:cszcc1h0ac.database.windows.net,1433";
+    $user = "kindergame";
+    $pwd = "baconPancakes#12345";
+    $db = "lodDeCuentas_db";
+ 
     $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $_SESSION['conexion']=$conn;
