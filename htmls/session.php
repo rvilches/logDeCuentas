@@ -54,7 +54,7 @@ switch($controller)
             $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
             $_SESSION['conexion']=$conn;
-            $stmt=$conn->prepare("dbo.loginHere @login=$login, @password=$pass");
+            $stmt=$conn->prepare("loginHere @login=$login, @password=$pass");
             $stmt->execute();
             $userdb= $stmt->fetch();
 
