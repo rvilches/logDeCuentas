@@ -85,7 +85,7 @@ function signUpControllerManager()
              } 
              else 
              {
-                 if (!preg_match("/^[a-zA-Z ]*$/",$_POST['firstname'])) 
+                 if (!preg_match("/^[a-zA-Z ]*$/",$_POST["firstname"])) 
                  {
                  $GLOBALS['firstnameErr'] = "Only letters and white space allowed"; 
                  }
@@ -132,7 +132,7 @@ function signUpControllerManager()
              }
              if (empty($_POST["password"])) 
              {
-                $GLOBALS['$passwordErr'] = "Password is required";
+                $GLOBALS['passwordErr'] = "Password is required";
              } 
              else 
              {
@@ -141,7 +141,7 @@ function signUpControllerManager()
              }
              if (empty($_POST["username"])) 
              {
-                $GLOBALS['$usernameErr'] = "username is Required";
+                $GLOBALS['usernameErr'] = "username is Required";
              } 
              else 
              {

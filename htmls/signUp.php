@@ -59,7 +59,7 @@ include 'session.php';
 		Password:
 		<br><input type="password" name="password" placeholder="password" value="<?php echo $_POST['password'];?>"><span class="error">* <?php include 'session.php'; echo $passwordErr;?></span><br><hr>
 		email:
-		<br><input type="text" name="email" placeholder="email" value="<?php echo $_POST['email'];?>" ><span class="error">* <?php include 'session.php'; $emailErr;?></span><br><hr>
+		<br><input type="text" name="email" placeholder="email" value="<?php echo $_POST['email'];?>" ><span class="error">* <?php include 'session.php';echo $emailErr;?></span><br><hr>
 
 		<input id="submit" type="submit" name="submit" value="create account">
 
