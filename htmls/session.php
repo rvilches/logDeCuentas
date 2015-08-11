@@ -54,7 +54,7 @@ switch($controller)
             $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
             $_SESSION['conexion']=$conn;
-            $stmt=$conn->prepare("SELECT * FROM users WHERE username='$login' AND password='$pass'");
+            $stmt=$conn->prepare("loginHere @login='$login', password='$pass'");
             $stmt->execute();
             $userdb= $stmt->fetch();
 
@@ -77,7 +77,7 @@ switch($controller)
             }
             break;
         }
-        
+
 }
 }
 function signUpControllerManager()
