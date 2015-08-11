@@ -106,3 +106,8 @@ section article
 	top:5px;
 }
 
+#loginErr
+{
+	color:red;
+}
+
