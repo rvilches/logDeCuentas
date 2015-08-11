@@ -33,11 +33,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
  		<br><input id="username" type="text" name="username" placeholder="username" ><br>
  		<span class="formpassword">Password:</span>
  		<br><input id="passwordinput" type="password" name="password" placeholder="password" ><br><br>
- 		<p id = "loginErr">Invalid username/password</p>
  		<input type="submit" name="submit" value="Login"><br> 
- 		
 		</form>
-
+		<p id = "loginErr">Invalid username/password</p>
  	</article>
  </section>
  <script type="text/javascript" src="login.js"></script>
