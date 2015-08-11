@@ -77,6 +77,10 @@ switch($controller)
             }
             break;
         }
+         case 'signUpController':
+         {
+
+         }
 }
 }
 function signUpControllerManager()
