@@ -77,6 +77,25 @@ switch($controller)
             }
             break;
         }
+    case 'signUpController':
+        {
+            try
+            {
+            $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
+            $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+            $_SESSION['conexion']=$conn;
+            $stmt=$conn->prepare("signUpToLogDeCuentas @login=$login, @password=$pass");
+            $stmt->execute();
+
+           
+            }
+    
+        catch(Exception $e)
+            {
+            die(print_r($e));
+            }
+            break;
+        }
 
 }
 }
