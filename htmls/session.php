@@ -81,7 +81,7 @@ function signUpControllerManager()
 
              if (empty($_POST["firstname"])) 
              {
-                 $GLOBALS['firstnameErr'] = "Name is required";
+                 $firstnameErr = "Name is required";
              } 
              else 
              {
