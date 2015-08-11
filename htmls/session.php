@@ -72,24 +72,22 @@ catch(Exception $e)
     }
 }
 
-
-$firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
 function signUpControllerManager()
  {
 
-     
+     $firstnameErr=$lastnameErr=$secondlastnameErr=$usernameErr=$passwordErr=$emailErr="";
      $firstnameBool=$lasnameBool=$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=FALSE;
      $controller = $_POST['controller'];
 
              if (empty($_POST["firstname"])) 
              {
-                 global $firstnameErr = "Name is required";
+                 $firstnameErr = "Name is required";
              } 
              else 
              {
                  if (!preg_match("/^[a-zA-Z ]*$/",$firstname)) 
                  {
-                 global $firstnameErr = "Only letters and white space allowed"; 
+                 $firstnameErr = "Only letters and white space allowed"; 
                  }
                  else
                  {
@@ -100,14 +98,14 @@ function signUpControllerManager()
 
              if (empty($_POST["email"])) 
              {
-                global $emailErr = "Email is required";
+                 $emailErr = "Email is required";
              } 
              else 
              {
                  $email = test_input($_POST["email"]);
                  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
                  {
-                 global $emailErr = "Invalid email format"; 
+                 $emailErr = "Invalid email format"; 
                  }
                  else
                  {
@@ -117,13 +115,13 @@ function signUpControllerManager()
              }
              if (empty($_POST["lastname"])) 
              {
-                 global $lastnameErr = "Lastname is required";
+                 $lastnameErr = "Lastname is required";
              } 
              else 
              {
                  if (!preg_match("/^[a-zA-Z ]*$/",$lastname)) 
                  {
-                 global $lastnameErr = "Only letters and white space allowed"; 
+                 $lastnameErr = "Only letters and white space allowed"; 
                  }
                  else
                  {
@@ -134,7 +132,7 @@ function signUpControllerManager()
              }
              if (empty($_POST["password"])) 
              {
-                global $passwordErr = "Password is required";
+                 $passwordErr = "Password is required";
              } 
              else 
              {
@@ -143,7 +141,7 @@ function signUpControllerManager()
              }
              if (empty($_POST["username"])) 
              {
-                global $usernameErr = "username is Required";
+                 $usernameErr = "username is Required";
              } 
              else 
              {
