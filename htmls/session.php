@@ -45,7 +45,7 @@ $user = "kindergame";
 $pwd = "baconPancakes#12345";
 $db = "lodDeCuentas_db";
 $consonante="loginController";
-switch($_POST['controller'])
+switch($controller)
 {
     case 'loginController':
         {
