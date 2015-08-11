@@ -52,8 +52,7 @@ switch($controller)
         try{
     
             $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
-            $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-            $_SESSION['conexion']=$conn;
+            $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); 
             $stmt=$conn->prepare("loginHere @login=$login, @password=$pass");
             $stmt->execute();
             $userdb= $stmt->fetch();
@@ -89,7 +88,7 @@ switch($controller)
             {
             $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-            $stmt=$conn->prepare("signUpToLogDeCuentas @firstName=$firstName, @lastName=$lastName, @secondLastName=$secondLastName, @email= $email, @password=$password, @username=$username");
+            $stmt=$conn->prepare("dbo.signUpToLogDeCuentas @firstName=$firstName, @lastName=$lastName, @secondLastName=$secondLastName, @email= $email, @password=$password, @username=$username");
             $stmt->execute();
 
            
