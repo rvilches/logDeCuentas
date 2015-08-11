@@ -75,17 +75,17 @@ catch(Exception $e)
 function signUpControllerManager()
  {
 
-     $GLOBALS['firstnameErr']=$GLOBALS['lastnameErr']=$GLOBALS['usernameErr']=$GLOBALS['passwordErr']=$GLOBALS['emailErr']="";
+     $GLOBALS['firstnameErr']=$GLOBALS['lastnameErr']=$GLOBALS['usernameErr']=$GLOBALS['passwordErr']=$GLOBALS['emailErr']=" ";
      $firstnameBool=$lasnameBool=$secondlastnameBool=$usernameBool=$passwordBool=$emailBool=FALSE;
      $controller = $_POST['controller'];
 
              if (empty($_POST["firstname"])) 
              {
-                 $firstnameErr = "Name is required";
+                 $GLOBALS['firstnameErr'] = "Name is required";
              } 
              else 
              {
-                 if (!preg_match("/^[a-zA-Z ]*$/",$firstname)) 
+                 if (!preg_match("/^[a-zA-Z ]*$/",$_POST['firstname'])) 
                  {
                  $GLOBALS['firstnameErr'] = "Only letters and white space allowed"; 
                  }

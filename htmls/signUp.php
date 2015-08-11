@@ -49,7 +49,7 @@ include 'session.php';
 		<form id = "userForm" method="post" action="" >
 		<input type="hidden" id='controller' name="controller" value="signUpController">
 		First Name:
-		<br><input type="text" id="firstname" name="firstname" placeholder="firstname" value="<?php echo $_POST['firstname'];?>" autofocus ="autofocus"><span class="error">* <?php include 'session.php'; echo $GLOBALS['firstnameErr'];?></span><br><hr>
+		<br><input type="text" id="firstname" name="firstname" placeholder="firstname" value="<?php echo $_POST['firstname'];?>" autofocus ="autofocus"><span class="error">* <?php include 'session.php'; echo $firstnameErr;?></span><br><hr>
 		Lastname:
 		<br><input type="text" name="lastname" placeholder="lastname" value="<?php echo $_POST['lastname'];?>"><span class="error">* <?php include 'session.php'; echo $lastnameErr;?></span><br><hr>
 		Second Lastname:
