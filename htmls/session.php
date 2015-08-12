@@ -91,7 +91,7 @@ switch($controller)
             $stmt=$conn->prepare("signUpToLogDeCuentas @firstName=$firstName, @lastName=$lastName, @secondLastName=$secondLastName, @email=$email, @password=$password, @username=$username");
             $stmt->execute();
 
-           
+            echo "did it";
             }
     
         catch(Exception $e)
