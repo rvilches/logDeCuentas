@@ -78,12 +78,12 @@ switch($controller)
         }
     case 'signUpController':
         {
-            $firstName=string($_POST['firstname']);
-            $username=string($_POST['username']);
-            $password=string($_POST['password']);
-            $lastName=string($_POST['lastname']);
-            $secondLastName=string($_POST['secondLastname']);
-            $email= string($_POST['email']);
+            $firstName=$_POST['firstname'];
+            $username=$_POST['username'];
+            $password=$_POST['password'];
+            $lastName=$_POST['lastname'];
+            $secondLastName=$_POST['secondLastname'];
+            $email= $_POST['email'];
             try
             {
             $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
@@ -91,7 +91,7 @@ switch($controller)
             $stmt=$conn->prepare("signUpToLogDeCuentas @firstName=$firstName, @lastName=$lastName, @secondLastName=$secondLastName, @email=$email, @password=$password, @username=$username");
             $stmt->execute();
 
-            echo "did it";
+           
             }
     
         catch(Exception $e)
