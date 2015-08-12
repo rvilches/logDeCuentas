@@ -83,12 +83,12 @@ switch($controller)
             $password=$_POST['password'];
             $lastName=$_POST['lastname'];
             $secondLastName=$_POST['secondLastname'];
-            $email= $_POST['email'];
+            $email= string ($_POST['email']);
             try
             {
             $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-            $stmt=$conn->prepare("signUpToLogDeCuentas @firstName=$firstName, @lastName=$lastName, @secondLastName=$secondLastName, @email= string ($email), @password=$password, @username=$username");
+            $stmt=$conn->prepare("signUpToLogDeCuentas @firstName=$firstName, @lastName=$lastName, @secondLastName=$secondLastName, @email= $email, @password=$password, @username=$username");
             $stmt->execute();
 
            
