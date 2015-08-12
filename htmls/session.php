@@ -83,7 +83,7 @@ switch($controller)
             $password=$_POST['password'];
             $lastName=$_POST['lastname'];
             $secondLastName=$_POST['secondLastname'];
-            $email=$_POST['email'];
+            $email= (string) $_POST['email'];
             
             try
             {
