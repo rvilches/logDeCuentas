@@ -83,7 +83,8 @@ switch($controller)
             $password=$_POST['password'];
             $lastName=$_POST['lastname'];
             $secondLastName=$_POST['secondLastname'];
-            $email= string ($_POST['email']);
+            $email= $_POST['email'];
+            string ($email);
             try
             {
             $conn = new PDO( "sqlsrv:Server= $server ; Database = $db ", $user, $pwd);
